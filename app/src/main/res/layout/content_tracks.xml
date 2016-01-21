@@ -13,4 +13,57 @@
     tools:showIn="@layout/activity_tracks">
 
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Button"
+        android:id="@+id/buttonTest"
+        android:onClick="onButtonTestClick"
+
+
+        />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="40pt"
+        android:layout_below="@id/buttonTest"
+        android:id="@+id/imageViewTest"
+        android:contentDescription="route map"
+        />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="40pt"
+        android:layout_below="@id/imageViewTest"
+        android:id="@+id/imageViewTest2"
+        android:contentDescription="route map"
+        />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="40pt"
+        android:layout_below="@id/imageViewTest2"
+        android:id="@+id/imageViewTest3"
+        android:contentDescription="route map"
+        />
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="40pt"
+        android:layout_below="@id/imageViewTest3"
+        android:id="@+id/imageViewTest4"
+        android:contentDescription="route map"
+        />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="40pt"
+        android:layout_below="@id/imageViewTest4"
+        android:id="@+id/imageViewTest5"
+        android:contentDescription="route map"
+        />
+
+
+
 </RelativeLayout>
