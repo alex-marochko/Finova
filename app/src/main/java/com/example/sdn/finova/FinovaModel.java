@@ -24,6 +24,8 @@ public class FinovaModel {
     static final String DATE1_PARAM = "date1";
     static final String DATE2_PARAM = "date2";
 
+    static final String TRACKS_SECTION_NAME = "tracks?";
+
     static final short NOT_AUTHORIZED_RESPONSE = 401;
     static final short SUCCESS_RESPONSE = 200;
     static final short INTERNAL_SERVER_ERROR_RESPONSE = 500;
@@ -38,15 +40,21 @@ public class FinovaModel {
     long dateFilterFrom;
     long dateFilterTo;
 
-    public FinovaModel(String serverURI, String accessToken) {
+    int tracksPerRequest;
+
+    public FinovaModel(String serverURI, String accessToken, int tracksPerRequest, int perPage) {
         this.serverURI = serverURI;
         this.accessToken = accessToken;
-        tracks = new ArrayList<>();
+        this.tracksPerRequest = tracksPerRequest;
     }
 
-    public String getData() throws IOException {
 
-        URL url = new URL(serverURI);
+
+    public String getTracksDataFromPage(int pageNumber) throws IOException { //numbers begin at 1, not 0
+
+        URL url = new URL(serverURI + TRACKS_SECTION_NAME + ACCESS_TOKEN_PARAM
+        + "=" + accessToken + "&" + PAGE_PARAM + "=" + pageNumber);
+
         HttpURLConnection connection = (HttpURLConnection)url.openConnection();
 
         try{
@@ -67,14 +75,11 @@ public class FinovaModel {
                 out.write(buffer, 0, bytesRead);
             }
             out.close();
-            return out.toString();
+            return out.toString().replaceAll("\"\\d+\":", ""); //using regex to replace unnecessary tracks numeration
 
         }finally {
             connection.disconnect();
         }
-
-
-
 
     }
 }
