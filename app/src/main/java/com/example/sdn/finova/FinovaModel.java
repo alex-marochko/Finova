@@ -75,7 +75,9 @@ public class FinovaModel {
                 out.write(buffer, 0, bytesRead);
             }
             out.close();
-            return out.toString().replaceAll("\"\\d+\":", ""); //using regex to replace unnecessary tracks numeration
+            return out.toString().replaceAll("\"\\d+\":\\{", "{")
+                    .replaceAll("\\{\\{","[{")
+                    .replaceAll("\\}\\}", "}]"); //using regex to replace unnecessary tracks numeration and wrong brackets
 
         }finally {
             connection.disconnect();

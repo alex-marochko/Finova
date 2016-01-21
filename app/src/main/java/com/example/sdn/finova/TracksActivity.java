@@ -89,17 +89,21 @@ public class TracksActivity extends AppCompatActivity {
 
                 FinovaModel finovaModel = new FinovaModel(SERVER_URI, ACCESS_TOKEN, 5, 2);
 
-                String s = finovaModel.getTracksDataFromPage(1);
-                Log.d(LOG_TAG, s);
+                String s;
 
                 s = finovaModel.getTracksDataFromPage(2);
                 Log.d(LOG_TAG, s);
 
+/*
                 s = finovaModel.getTracksDataFromPage(3);
+                Log.d(LOG_TAG, s);
+*/
+
+
+                s = finovaModel.getTracksDataFromPage(33);
                 Log.d(LOG_TAG, s);
 
 
-/*
                 TrackJSON[] tracks;
 
                 Gson gson = new Gson();
@@ -107,7 +111,6 @@ public class TracksActivity extends AppCompatActivity {
 
                 Log.d(LOG_TAG, tracks[0].getAddressStart());
                 Log.d(LOG_TAG, tracks[1].getImg());
-*/
 
 //                Picasso.with(getBaseContext()).load(tracks[1].getImg()).into(imageViewTest);
 
@@ -116,13 +119,13 @@ public class TracksActivity extends AppCompatActivity {
 
             }
 
-
-
         }
 
         new GetDataTask().execute();
+/*
         Picasso.with(getBaseContext())
                 .load("https://newevolutiondesigns.com/images/freebies/space-wallpaper-29.jpg").into(imageViewTest);
+*/
 
 
 
