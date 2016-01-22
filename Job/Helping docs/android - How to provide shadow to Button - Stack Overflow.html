@@ -1,0 +1,2073 @@
+<!DOCTYPE html>
+<html itemscope="" itemtype="http://schema.org/QAPage"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<title>android - How to provide shadow to Button - Stack Overflow</title>
+    <link rel="shortcut icon" href="http://cdn.sstatic.net/stackoverflow/img/favicon.ico?v=4f32ecc8f43d">
+    <link rel="apple-touch-icon image_src" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a">
+    <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="http://stackoverflow.com/opensearch.xml">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:domain" content="stackoverflow.com">
+    <meta property="og:type" content="website">    
+    <meta property="og:image" itemprop="image primaryImageOfPage" content="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon@2.png?v=73d79a89bded&amp;a">
+    <meta name="twitter:title" property="og:title" itemprop="title name" content="How to provide shadow to Button">
+    <meta name="twitter:description" property="og:description" itemprop="description" content="
+
+As you can see in image, I want shadow behind a Button. I have created Button with rounded corners. But problem is I can't generate a shadow behind that Button. How can I achieve this?
+">
+    <meta property="og:url" content="http://stackoverflow.com/questions/15333529/how-to-provide-shadow-to-button">
+    <link rel="canonical" href="http://stackoverflow.com/questions/15333529/how-to-provide-shadow-to-button">
+
+    
+    
+    <script src="android%20-%20How%20to%20provide%20shadow%20to%20Button%20-%20Stack%20Overflow_files/quant.js" async=""></script><script src="android%20-%20How%20to%20provide%20shadow%20to%20Button%20-%20Stack%20Overflow_files/beacon.js" async=""></script><script src="android%20-%20How%20to%20provide%20shadow%20to%20Button%20-%20Stack%20Overflow_files/analytics.js" async=""></script><script src="android%20-%20How%20to%20provide%20shadow%20to%20Button%20-%20Stack%20Overflow_files/ados_002.js" async="" type="text/javascript"></script><script src="android%20-%20How%20to%20provide%20shadow%20to%20Button%20-%20Stack%20Overflow_files/ados.js" async="" type="text/javascript"></script><script src="android%20-%20How%20to%20provide%20shadow%20to%20Button%20-%20Stack%20Overflow_files/jquery.js"></script>
+    <script src="android%20-%20How%20to%20provide%20shadow%20to%20Button%20-%20Stack%20Overflow_files/stub.js"></script>
+    <link rel="stylesheet" type="text/css" href="android%20-%20How%20to%20provide%20shadow%20to%20Button%20-%20Stack%20Overflow_files/all.css">
+
+            <link rel="alternate" type="application/atom+xml" title="Feed for question 'How to provide shadow to Button'" href="http://stackoverflow.com/feeds/question/15333529">
+            <meta name="twitter:app:country" content="US">
+            <meta name="twitter:app:name:iphone" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:iphone" content="871299723">
+            <meta name="twitter:app:url:iphone" content="se-zaphod://stackoverflow.com/questions/15333529/how-to-provide-shadow-to-button">
+            <meta name="twitter:app:name:ipad" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:ipad" content="871299723">
+            <meta name="twitter:app:url:ipad" content="se-zaphod://stackoverflow.com/questions/15333529/how-to-provide-shadow-to-button">
+            <meta name="twitter:app:name:googleplay" content="Stack Exchange Android">
+            <meta name="twitter:app:url:googleplay" content="http://stackoverflow.com/questions/15333529/how-to-provide-shadow-to-button">
+            <meta name="twitter:app:id:googleplay" content="com.stackexchange.marvin">
+        <script>
+        
+            StackExchange.ready(function () {
+                    
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.initSnippetRenderer();
+                    });
+                    
+
+                StackExchange.using("postValidation", function () {
+                    StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+                });
+
+                
+                StackExchange.question.init({votesCast:[],autoShowCommentHelp:true,showAnswerHelp:true,totalCommentCount:1,shownCommentCount:1,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:15333529});
+
+                styleCode();
+
+                    StackExchange.realtime.subscribeToQuestion('1', '15333529');
+                                                                    StackExchange.using("gps", function () { StackExchange.gps.trackOutboundClicks('#content', '.post-text'); });
+
+            });
+        </script>
+
+
+    <script>
+        StackExchange.ready(function () {
+            StackExchange.realtime.init('wss://qa.sockets.stackexchange.com,ws://qa.sockets.stackexchange.com');
+            StackExchange.realtime.subscribeToReputationNotifications('1');
+                StackExchange.realtime.subscribeToTopBarNotifications('1');
+        });
+    </script>
+    <script>
+        StackExchange.init({"locale":"en","stackAuthUrl":"https://stackauth.com","serverTime":1453487813,"networkMetaHostname":"meta.stackexchange.com","routeName":"Questions/Show","styleCode":true,"enableUserHovercards":true,"snippets":{"enabled":true,"domain":"stacksnippets.net"},"site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdchgIAAAAAAJwGpIzRQSOFaO0pU6s44Xt8aTwc","recaptchaAudioLang":"en","enableNewTagCreationWarning":true,"insertSpaceAfterNameTabCompletion":false,"id":1,"enableSocialMediaInSharePopup":true},"user":{"fkey":"f7e860c1905c0ca29719bb021896ee9e","rep":31,"isRegistered":true,"userType":3,"userId":5060990,"accountId":6544578,"gravatar":"<div class=\"gravatar-wrapper-32\"><img src=\"https://lh6.googleusercontent.com/-bOBkB3-tqlw/AAAAAAAAAAI/AAAAAAAADFA/vSajmRw-__8/photo.jpg?sz=32\" alt=\"\" width=\"32\" height=\"32\"></div>","profileUrl":"http://stackoverflow.com/users/5060990/alexander-marochko","canSeeDeletedPosts":false},"realtime":{"newest":false,"active":false,"tagged":true}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"ce2bc1e8d260","js/moderator.en.js":"ba8b207c5b02","js/full-anon.en.js":"ae848a43724c","js/full.en.js":"4c65482855c4","js/wmd.en.js":"2d6b8cee45a0","js/third-party/jquery.autocomplete.min.js":"e5f01e97f7c3","js/third-party/jquery.autocomplete.min.en.js":"","js/mobile.en.js":"ea3cc7f5740d","js/help.en.js":"f58b9bbdda52","js/tageditor.en.js":"0b2703e1b543","js/tageditornew.en.js":"ef087461a276","js/inline-tag-editing.en.js":"de80429b1816","js/revisions.en.js":"6368fc5fab9a","js/review.en.js":"1bab337e02fe","js/tagsuggestions.en.js":"d1ff9b84abe5","js/post-validation.en.js":"d3c14f0ceea6","js/explore-qlist.en.js":"e71f14781288","js/events.en.js":"32d8d996a05c","js/keyboard-shortcuts.en.js":"d800cef8c4ef","js/external-editor.en.js":"9327339c2328","js/external-editor.en.js":"9327339c2328","js/snippet-javascript.en.js":"f590e314ee2d","js/snippet-javascript-codemirror.en.js":"45bc15cf36bf"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+    
+    
+    
+<script src="android%20-%20How%20to%20provide%20shadow%20to%20Button%20-%20Stack%20Overflow_files/adFeedback.js" type="text/javascript"></script><link href="android%20-%20How%20to%20provide%20shadow%20to%20Button%20-%20Stack%20Overflow_files/adFeedback.css" rel="stylesheet"><script src="android%20-%20How%20to%20provide%20shadow%20to%20Button%20-%20Stack%20Overflow_files/full.js" async=""></script><script src="android%20-%20How%20to%20provide%20shadow%20to%20Button%20-%20Stack%20Overflow_files/snippet-javascript.js" async=""></script><script src="android%20-%20How%20to%20provide%20shadow%20to%20Button%20-%20Stack%20Overflow_files/post-validation.js" async=""></script><script src="android%20-%20How%20to%20provide%20shadow%20to%20Button%20-%20Stack%20Overflow_files/prettify-full.js" async=""></script><script src="android%20-%20How%20to%20provide%20shadow%20to%20Button%20-%20Stack%20Overflow_files/external-editor.js" async=""></script><script src="android%20-%20How%20to%20provide%20shadow%20to%20Button%20-%20Stack%20Overflow_files/wmd.js" async=""></script><style type="text/css"> .wmd-snippet-button span { background-position: 0 0; } .wmd-snippet-button:hover span { background-position: 0 -40px; }</style><link href="android%20-%20How%20to%20provide%20shadow%20to%20Button%20-%20Stack%20Overflow_files/jobs.css" rel="stylesheet" type="text/css"></head>
+<body class="question-page new-topbar">
+    <noscript><div id="noscript-padding"></div></noscript>
+    
+
+
+
+
+    <div id="notify-container"></div>
+    <div id="overlay-header"></div>
+    <div id="custom-header"></div>
+
+
+
+
+
+<div class="topbar">
+    <div class="topbar-wrapper">
+
+        <div class="js-topbar-dialog-corral">
+
+
+<div class="topbar-dialog siteSwitcher-dialog dno">
+    <div class="header">
+        <h3><a href="http://stackoverflow.com/">current community</a></h3>
+    </div>
+    <div class="modal-content current-site-container">
+        <ul class="current-site">
+                <li>
+                        <div class="related-links">
+                    <a href="http://chat.stackoverflow.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:6 })">chat</a>
+                    <a href="http://stackoverflow.com/users/logout" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:8 })">log out</a>
+    </div>
+
+
+
+
+    <a href="http://stackoverflow.com/" class="current-site-link site-link js-gps-track" data-id="1" data-gps-track="
+        site_switcher.click({ item_type:3 })">
+        <div class="site-icon favicon favicon-stackoverflow" title="Stack Overflow"></div>
+        Stack Overflow
+    </a>
+
+                </li>
+                <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    
+
+
+
+    <a href="http://meta.stackoverflow.com/" class="site-link js-gps-track" data-id="552" data-gps-track="
+            site.switch({ target_site:552, item_type:3 }),
+        site_switcher.click({ item_type:4 })">
+        <div class="site-icon favicon favicon-stackoverflowmeta" title="Meta Stack Overflow"></div>
+        Meta Stack Overflow
+    </a>
+
+                </li>
+                            <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    <a class="site-link js-gps-track" href="http://careers.stackoverflow.com/?utm_source=stackoverflow.com&amp;utm_medium=site-ui&amp;utm_campaign=multicollider" data-gps-track="site_switcher.click({ item_type:9 })">
+                        <div class="site-icon favicon favicon-careers" title="Stack Overflow Careers"></div>
+                        Stack Overflow Careers
+                    </a>
+                </li>
+        </ul>
+    </div>
+    
+    <div class="header" id="your-communities-header">
+        <h3>
+                <a href="http://stackexchange.com/users/6544578/?tab=accounts">your communities</a>
+        </h3>
+            
+            <a href="#" id="edit-pinned-sites">edit</a>
+            <a href="#" id="cancel-pinned-sites" style="display: none;">cancel</a>
+    </div>
+    <div class="modal-content" id="your-communities-section">
+            
+            <ul class="my-sites">
+                    <li>
+                        
+
+
+
+    <a href="http://stackoverflow.com/" class="site-link js-gps-track" data-id="1" data-gps-track="
+            site.switch({ target_site:1, item_type:3 }),
+        site_switcher.click({ item_type:1 })">
+        <div class="site-icon favicon favicon-stackoverflow" title="Stack Overflow"></div>
+        Stack Overflow
+            <span class="rep-score">31</span>
+    </a>
+
+                    </li>
+            </ul>
+                <div class="pinned-site-editor-container" style="display: none;">
+                    <input id="js-site-search-txt" class="site-filter-input" placeholder="Add a Stack Exchange community" type="text">
+                    <input id="pin-site-btn" value="Add" disabled="disabled" type="submit">
+                    <ul class="js-found-sites found-sites"></ul>
+                    <ul class="pinned-site-list sortable" data-custom-list="False">
+                    </ul>
+                    <input value="Save" id="save-pinned-sites-btn" disabled="disabled" type="submit">
+                    <a href="#" id="reset-pinned-sites">reset to default list</a>
+                </div>
+    </div>
+    
+    <div class="header">
+        <h3><a href="http://stackexchange.com/sites">more stack exchange communities</a></h3>
+        <a href="http://blog.stackoverflow.com/" class="fr">company blog</a>
+    </div>
+    <div class="modal-content">
+            <div class="child-content"></div>
+    </div>
+</div>
+        </div>
+
+        <div class="network-items">
+
+            <a href="http://stackexchange.com/" class="topbar-icon icon-site-switcher yes-hover js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="A list of all 151 Stack Exchange sites">
+                <span class="hidden-text">Stack Exchange</span>
+            </a>
+
+    <a href="#" class="topbar-icon icon-inbox yes-hover js-inbox-button" title="Recent inbox messages">
+        <span class="hidden-text">Inbox</span>
+        <span class="unread-count" style="display:none"></span>
+    </a>
+    <a href="#" class="topbar-icon icon-achievements yes-hover js-achievements-button" data-unread-class="" title="Recent achievements: reputation, badges, and privileges earned">
+        <span class="hidden-text">Reputation and Badges</span>
+        <span class="unread-count" style="display:none">
+            
+        </span>
+    </a>
+        </div>
+
+        <div class="topbar-links">
+
+                <a href="http://stackoverflow.com/users/5060990/alexander-marochko" class="profile-me js-gps-track" data-gps-track="profile_summary.click()">
+                    
+                    <div class="gravatar-wrapper-24" title="Alexander Marochko"><img src="android%20-%20How%20to%20provide%20shadow%20to%20Button%20-%20Stack%20Overflow_files/photo.jpg" alt="" class="avatar-me js-avatar-me" height="24" width="24"></div>
+
+                    <div class="links-container topbar-flair">
+
+                        <span class="reputation" title="your reputation: 31">
+                            31
+                        </span>
+<span title="2 bronze badges"><span class="badge3"></span><span class="badgecount">2</span></span>                    </div>
+                </a>
+                <div class="links-container">
+                    <span class="topbar-menu-links">
+
+
+
+
+    <a href="#" class="icon-help js-help-button" title="Help Center and other resources">
+        help
+        <span class="triangle"></span>
+    </a>
+    <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="http://stackoverflow.com/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Start here for a quick overview of the site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="http://stackoverflow.com/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Help Center
+                        <span class="item-summary">
+                            Detailed answers to any questions you might have
+                        </span>
+                    </a>
+                </li>
+                    <li>
+                        <a href="http://meta.stackoverflow.com/" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                            Meta
+                            <span class="item-summary">
+                                Discuss the workings and policies of this site
+                            </span>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+
+                    </span>
+                </div>
+
+            <div class="search-container">
+                <form id="search" action="/search" method="get" autocomplete="off">
+                    <input name="q" placeholder="search" tabindex="1" autocomplete="off" maxlength="240" type="text">
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+    <script>
+        StackExchange.ready(function() { StackExchange.topbar.init(); });
+    </script>
+
+    <div class="container">
+        <div id="header">
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="http://stackoverflow.com/">
+                    Stack Overflow
+                </a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs">
+                    <ul>
+                        <li class="youarehere"><a id="nav-questions" href="http://stackoverflow.com/questions">Questions</a></li>
+                            <li><a id="nav-jobs" href="http://stackoverflow.com/jobs">Jobs</a></li>
+                        <li><a id="nav-tags" href="http://stackoverflow.com/tags">Tags</a></li>
+                        <li><a id="nav-users" href="http://stackoverflow.com/users">Users</a></li>
+                        <li><a id="nav-badges" href="http://stackoverflow.com/help/badges">Badges</a></li>
+                                            </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion" href="http://stackoverflow.com/questions/ask">Ask Question</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+        <div id="content" class="snippet-hidden">
+            
+
+<div itemscope="" itemtype="http://schema.org/Question">
+    <link itemprop="image" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a">
+			<div id="question-header">
+                <h1 itemprop="name"><a href="http://stackoverflow.com/questions/15333529/how-to-provide-shadow-to-button" class="question-hyperlink">How to provide shadow to Button</a></h1>
+		</div>
+			<div id="mainbar">
+
+			
+
+<div class="question" data-questionid="15333529" id="question">
+
+    <script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,8277,"adzerk917920859",4).setZone(43); });
+            </script>
+            <div class="everyonelovesstackoverflow" id="adzerk917920859"><a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6NCwiYnQiOjAsImNtIjozMjI1MTQsImNoIjoxMTc4LCJjayI6e30sImNyIjoxMjY3ODEzLCJkaSI6IjlkZDIyMjcwODEzZDRjNTFhYzgyYzdhOWI0NDA3MDZkIiwiZG0iOjEsImZjIjoxMzY2MzEyLCJmbCI6ODY0MjI2LCJpcCI6IjE3Ni4zNy40OC45NSIsImt3IjoiYW5kcm9pZCxzaGFkb3cseC11c2VyLXJlZ2lzdGVyZWQiLCJudyI6MjIsInBjIjowLCJlYyI6MCwicHIiOjE1NjgsInJ0IjoxLCJyZiI6Imh0dHBzOi8vd3d3Lmdvb2dsZS5jb20udWEiLCJzdCI6ODI3NywidWsiOiJ1ZTEtY2UwYTlkNjBkODNhNDEwOTljMzEyMTA4OTA3MWQwMDciLCJ6biI6NDMsInRzIjoxNDUzNDg3ODE0NDA4LCJiZiI6dHJ1ZSwicG4iOiJhZHplcms5MTc5MjA4NTkiLCJ1ciI6Imh0dHA6Ly9zdGFja292ZXJmbG93LmNvbS9qb2JzL3doeS1qb2JzP3V0bV9zb3VyY2U9c3RhY2tvdmVyZmxvdy5jb20mdXRtX21lZGl1bT1hZCZ1dG1fY2FtcGFpZ249Y2FuZGlkYXRlcy1hZGQtY3YmdXRtX2NvbnRlbnQ9bGItYmlyZHMifQ&amp;s=eZ0HTxD9bmdB5hnbgADhLJVfdGM" rel="nofollow" target="_blank" title=""><img class="zemkenjjnmpvkdciwfji" src="android%20-%20How%20to%20provide%20shadow%20to%20Button%20-%20Stack%20Overflow_files/82dad5859089475ba9131caf8f71c2cc.png" title="" alt="" height="90" width="728" border="0"></a><img class="zemkenjjnmpvkdciwfji" src="android%20-%20How%20to%20provide%20shadow%20to%20Button%20-%20Stack%20Overflow_files/i_003.gif" style="position:absolute;" height="0px" width="0px" border="0"></div>    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="15333529" type="hidden">
+        <a class="vote-up-off" title="This question shows research effort; it is useful and clear">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">24</span>
+        <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">down vote</a>
+
+        <a class="star-off" href="#" title="This is a favorite question (click again to undo)">favorite</a>
+        <div class="favoritecount"><b>15</b></div>
+
+
+</div>
+
+            </td>
+            
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="text">
+
+<p><img src="android%20-%20How%20to%20provide%20shadow%20to%20Button%20-%20Stack%20Overflow_files/vrHCF.png" alt="enter image description here"></p>
+
+<p>As you can see in image, I want shadow behind a <code>Button</code>. I have created <code>Button</code> with rounded corners. But problem is I can't generate a shadow behind that <code>Button</code>. How can I achieve this?</p>
+    </div>
+    <div class="post-taglist">
+        <a href="http://stackoverflow.com/questions/tagged/android" class="post-tag js-gps-track" title="show questions tagged 'android'" rel="tag"><img src="android%20-%20How%20to%20provide%20shadow%20to%20Button%20-%20Stack%20Overflow_files/tKsDb.png" alt="" class="sponsor-tag-img" height="16" width="18">android</a> <a href="http://stackoverflow.com/questions/tagged/shadow" class="post-tag js-gps-track" title="show questions tagged 'shadow'" rel="tag">shadow</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/q/15333529/5060990" title="short permalink to this question" class="short-link" id="link-post-15333529">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/15333529/edit" class="suggest-edit-post" title="revise and improve this post">edit</a><span class="lsep">|</span><a href="#" class="flag-post-link" title="flag this post for serious problems or moderator attention" data-postid="15333529">flag</a></div>        
+    </td>
+    <td class="post-signature owner">
+        <div class="user-info user-hover">
+    <div class="user-action-time">
+        asked <span title="2013-03-11 07:46:45Z" class="relativetime">Mar 11 '13 at 7:46</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/1841457/chintan-rathod"><div class="gravatar-wrapper-32"><img src="android%20-%20How%20to%20provide%20shadow%20to%20Button%20-%20Stack%20Overflow_files/9udcy.jpg" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/1841457/chintan-rathod">Chintan Rathod</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 11766" dir="ltr">11.8k</span><span title="7 gold badges"><span class="badge1"></span><span class="badgecount">7</span></span><span title="42 silver badges"><span class="badge2"></span><span class="badgecount">42</span></span><span title="66 bronze badges"><span class="badge3"></span><span class="badgecount">66</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>
+        </tr>
+                
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-15333529" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-21654057" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                <a class="comment-up comment-up-off" title="this comment adds something useful to the post">upvote</a>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                                <td>
+                                    <a class="comment-flag" title="Flag this comment for serious problems or moderator attention">flag</a>
+                                </td>
+                        </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Refer: <a href="http://stackoverflow.com/questions/3567312/android-drop-shadow-on-view" title="android drop shadow on view">stackoverflow.com/questions/3567312/android-drop-shadow-on-view</a> &amp; <a href="http://stackoverflow.com/questions/6563927/how-to-make-shadow-effect-for-abutton-in-android" title="how to make shadow effect for abutton in android">stackoverflow.com/questions/6563927/…</a></span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/1199267/yasitha-chinthaka" title="4169 reputation" class="comment-user">Yasitha Chinthaka</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment21654057_15333529"><span title="2013-03-11 07:52:46Z" class="relativetime-clean">Mar 11 '13 at 7:52</span></a></span>
+                    <span class="edited-yes" title="this comment was edited 2 times"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-15333529" data-rep="50" data-reg="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>        </tbody></table>
+</div>
+
+			<div id="answers">
+
+				<a name="tab-top"></a>
+				<div id="answers-header">
+					<div class="subheader answers-subheader">
+						<h2>
+								5 Answers
+                                <span style="display:none;" itemprop="answerCount">5</span>
+						</h2>
+						<div>
+							<div id="tabs">
+        <a href="http://stackoverflow.com/questions/15333529/how-to-provide-shadow-to-button?answertab=active#tab-top" data-nav-xhref="" title="Answers with the latest activity first" data-value="active">
+            active</a>
+        <a href="http://stackoverflow.com/questions/15333529/how-to-provide-shadow-to-button?answertab=oldest#tab-top" data-nav-xhref="" title="Answers in the order they were provided" data-value="oldest">
+            oldest</a>
+        <a class="youarehere" href="http://stackoverflow.com/questions/15333529/how-to-provide-shadow-to-button?answertab=votes#tab-top" data-nav-xhref="" title="Answers with the highest score first" data-value="votes">
+            votes</a>
+</div>
+						</div>
+					</div>    
+				</div>    
+
+
+
+
+  
+<a name="15333583"></a>
+<div id="answer-15333583" class="answer accepted-answer" data-answerid="15333583" itemscope="" itemtype="http://schema.org/Answer" itemprop="acceptedAnswer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="15333583" type="hidden">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">59</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+        <span class="vote-accepted-on load-accepted-answer-date" title="loading when this answer was accepted...">accepted</span>
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Use this approach to get your desired look.<br>
+<strong>button_selector.xml :</strong></p>
+
+<pre style="" class="default prettyprint prettyprinted"><code><span class="tag">&lt;selector</span><span class="pln"> </span><span class="atn">xmlns:android</span><span class="pun">=</span><span class="atv">"http://schemas.android.com/apk/res/android"</span><span class="tag">&gt;</span><span class="pln">
+</span><span class="tag">&lt;item&gt;</span><span class="pln">
+    </span><span class="tag">&lt;layer-list&gt;</span><span class="pln">
+        </span><span class="tag">&lt;item</span><span class="pln"> </span><span class="atn">android:right</span><span class="pun">=</span><span class="atv">"5dp"</span><span class="pln"> </span><span class="atn">android:top</span><span class="pun">=</span><span class="atv">"5dp"</span><span class="tag">&gt;</span><span class="pln">
+            </span><span class="tag">&lt;shape&gt;</span><span class="pln">
+                </span><span class="tag">&lt;corners</span><span class="pln"> </span><span class="atn">android:radius</span><span class="pun">=</span><span class="atv">"3dp"</span><span class="pln"> </span><span class="tag">/&gt;</span><span class="pln">
+                </span><span class="tag">&lt;solid</span><span class="pln"> </span><span class="atn">android:color</span><span class="pun">=</span><span class="atv">"#D6D6D6"</span><span class="pln"> </span><span class="tag">/&gt;</span><span class="pln">
+            </span><span class="tag">&lt;/shape&gt;</span><span class="pln">
+        </span><span class="tag">&lt;/item&gt;</span><span class="pln">
+        </span><span class="tag">&lt;item</span><span class="pln"> </span><span class="atn">android:bottom</span><span class="pun">=</span><span class="atv">"2dp"</span><span class="pln"> </span><span class="atn">android:left</span><span class="pun">=</span><span class="atv">"2dp"</span><span class="tag">&gt;</span><span class="pln">
+            </span><span class="tag">&lt;shape&gt;</span><span class="pln">
+                </span><span class="tag">&lt;gradient</span><span class="pln"> </span><span class="atn">android:angle</span><span class="pun">=</span><span class="atv">"270"</span><span class="pln"> 
+                    </span><span class="atn">android:endColor</span><span class="pun">=</span><span class="atv">"#E2E2E2"</span><span class="pln"> </span><span class="atn">android:startColor</span><span class="pun">=</span><span class="atv">"#BABABA"</span><span class="pln"> </span><span class="tag">/&gt;</span><span class="pln">
+                </span><span class="tag">&lt;stroke</span><span class="pln"> </span><span class="atn">android:width</span><span class="pun">=</span><span class="atv">"1dp"</span><span class="pln"> </span><span class="atn">android:color</span><span class="pun">=</span><span class="atv">"#BABABA"</span><span class="pln"> </span><span class="tag">/&gt;</span><span class="pln">
+                </span><span class="tag">&lt;corners</span><span class="pln"> </span><span class="atn">android:radius</span><span class="pun">=</span><span class="atv">"4dp"</span><span class="pln"> </span><span class="tag">/&gt;</span><span class="pln">
+                </span><span class="tag">&lt;padding</span><span class="pln"> </span><span class="atn">android:bottom</span><span class="pun">=</span><span class="atv">"10dp"</span><span class="pln"> </span><span class="atn">android:left</span><span class="pun">=</span><span class="atv">"10dp"</span><span class="pln"> 
+                    </span><span class="atn">android:right</span><span class="pun">=</span><span class="atv">"10dp"</span><span class="pln"> </span><span class="atn">android:top</span><span class="pun">=</span><span class="atv">"10dp"</span><span class="pln"> </span><span class="tag">/&gt;</span><span class="pln">
+            </span><span class="tag">&lt;/shape&gt;</span><span class="pln">
+        </span><span class="tag">&lt;/item&gt;</span><span class="pln">
+    </span><span class="tag">&lt;/layer-list&gt;</span><span class="pln">
+</span><span class="tag">&lt;/item&gt;</span><span class="pln">
+
+</span><span class="tag">&lt;/selector&gt;</span></code></pre>
+
+<p><strong>And in your xml layout:</strong></p>
+
+<pre style="" class="default prettyprint prettyprinted"><code><span class="tag">&lt;Button</span><span class="pln">
+   </span><span class="atn">android:background</span><span class="pun">=</span><span class="atv">"@drawable/button_selector"</span><span class="pln">
+   ...
+   ..
+</span><span class="tag">/&gt;</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/15333583/5060990" title="short permalink to this answer" class="short-link" id="link-post-15333583">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/15333583/edit" class="suggest-edit-post" title="revise and improve this post">edit</a><span class="lsep">|</span><a href="#" class="flag-post-link" title="flag this post for serious problems or moderator attention" data-postid="15333583">flag</a></div>                    </td>
+    <td class="post-signature" align="right">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/15333583/revisions" title="show all edits to this post">edited <span title="2014-11-13 13:12:23Z" class="relativetime">Nov 13 '14 at 13:12</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/3879847/ranjith-kumar"><div class="gravatar-wrapper-32"><img src="android%20-%20How%20to%20provide%20shadow%20to%20Button%20-%20Stack%20Overflow_files/l2MFJ.png" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/3879847/ranjith-kumar">Ranjith Kumar</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">2,085</span><span title="3 gold badges"><span class="badge1"></span><span class="badgecount">3</span></span><span title="14 silver badges"><span class="badge2"></span><span class="badgecount">14</span></span><span title="36 bronze badges"><span class="badge3"></span><span class="badgecount">36</span></span>
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2013-03-11 07:51:13Z" class="relativetime">Mar 11 '13 at 7:51</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/1562558/festus-tamakloe"><div class="gravatar-wrapper-32"><img src="android%20-%20How%20to%20provide%20shadow%20to%20Button%20-%20Stack%20Overflow_files/jDSeS.jpg" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/1562558/festus-tamakloe">Festus Tamakloe</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">6,424</span><span title="3 gold badges"><span class="badge1"></span><span class="badgecount">3</span></span><span title="24 silver badges"><span class="badge2"></span><span class="badgecount">24</span></span><span title="50 bronze badges"><span class="badge3"></span><span class="badgecount">50</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+            
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-15333583" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-31658852" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                <a class="comment-up comment-up-off" title="this comment adds something useful to the post">upvote</a>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                                <td>
+                                    <a class="comment-flag" title="Flag this comment for serious problems or moderator attention">flag</a>
+                                </td>
+                        </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">This looks cool, but when I tried this intellij didn't like it. When I looked at the <a href="http://developer.android.com/guide/topics/resources/drawable-resource.html#StateList" rel="nofollow">doc</a> for <code>item</code> it says <code>android:drawable</code> is <b>required</b>.</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/9648/johnnylambada" title="5794 reputation" class="comment-user">JohnnyLambada</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment31658852_15333583"><span title="2014-01-10 21:53:35Z" class="relativetime-clean">Jan 10 '14 at 21:53</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-42298724" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                <a class="comment-up comment-up-off" title="this comment adds something useful to the post">upvote</a>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                                <td>
+                                    <a class="comment-flag" title="Flag this comment for serious problems or moderator attention">flag</a>
+                                </td>
+                        </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">closing &lt;/selector&gt; tag is missing</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/276185/myforums" title="103 reputation" class="comment-user">myforums</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment42298724_15333583"><span title="2014-11-11 16:47:15Z" class="relativetime-clean">Nov 11 '14 at 16:47</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-52703312" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                <a class="comment-up comment-up-off" title="this comment adds something useful to the post">upvote</a>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                                <td>
+                                    <a class="comment-flag" title="Flag this comment for serious problems or moderator attention">flag</a>
+                                </td>
+                        </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">It's not exactly what the 
+asker wanted as this solution makes the opposite: gradient button 
+background and solid shadow color. And this seemes very different from 
+outer shadow</span>
+		            –&nbsp;<span class="comment-user">user4702646</span>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment52703312_15333583"><span title="2015-09-05 23:17:41Z" class="relativetime-clean">Sep 5 '15 at 23:17</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-52850777" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                <a class="comment-up comment-up-off" title="this comment adds something useful to the post">upvote</a>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                                <td>
+                                    <a class="comment-flag" title="Flag this comment for serious problems or moderator attention">flag</a>
+                                </td>
+                        </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Can I make it so that a 
+textColor selector is baked into the above selector -so I don't have to 
+set both background textColor each time I define a button, but only 
+needs to set the background...?</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/2254314/johnytex" title="941 reputation" class="comment-user">JohnyTex</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment52850777_15333583"><span title="2015-09-10 07:20:50Z" class="relativetime-clean">Sep 10 '15 at 7:20</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-15333583" data-rep="50" data-reg="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+<script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,8277,"adzerk103150718",4).setZone(44); });
+            </script>
+            <div class="everyonelovesstackoverflow" id="adzerk103150718"><a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6NCwiYnQiOjAsImNtIjozMjI1MTQsImNoIjoxMTc4LCJjayI6e30sImNyIjoxMjY3NTkwLCJkaSI6ImMxNDYwZjM4ZWY2MDRhNTZhYzM2Y2Q4YTUwNjI1YjU2IiwiZG0iOjEsImZjIjoxMzY1OTUzLCJmbCI6ODY0MjI1LCJpcCI6IjE3Ni4zNy40OC45NSIsImt3IjoiYW5kcm9pZCxzaGFkb3cseC11c2VyLXJlZ2lzdGVyZWQiLCJudyI6MjIsInBjIjowLCJlYyI6MCwicHIiOjE2MDQsInJ0IjoxLCJyZiI6Imh0dHBzOi8vd3d3Lmdvb2dsZS5jb20udWEiLCJzdCI6ODI3NywidWsiOiJ1ZTEtY2UwYTlkNjBkODNhNDEwOTljMzEyMTA4OTA3MWQwMDciLCJ6biI6NDQsInRzIjoxNDUzNDg3ODE0NDEwLCJiZiI6dHJ1ZSwicG4iOiJhZHplcmsxMDMxNTA3MTgiLCJ1ciI6Imh0dHA6Ly9zdGFja292ZXJmbG93LmNvbS9qb2JzL3JlbW90ZT91dG1fc291cmNlPXN0YWNrb3ZlcmZsb3cuY29tJnV0bV9tZWRpdW09YWQmdXRtX2NhbXBhaWduPWNhbmRpZGF0ZXMtd2ZoJnV0bV9jb250ZW50PWxiLXdmaC1wYWphbWFzIn0&amp;s=hcI10CwD-pJDIYdFYlqlGDCKX_8" rel="nofollow" target="_blank" title=""><img class="zemkenjjnmpvkdciwfji" src="android%20-%20How%20to%20provide%20shadow%20to%20Button%20-%20Stack%20Overflow_files/1e340e02d6c4484cb02bb42c8da9778a.png" title="" alt="" height="90" width="728" border="0"></a><img class="zemkenjjnmpvkdciwfji" src="android%20-%20How%20to%20provide%20shadow%20to%20Button%20-%20Stack%20Overflow_files/i_004.gif" style="position:absolute;" height="0px" width="0px" border="0"></div>
+  
+<a name="30780690"></a>
+<div id="answer-30780690" class="answer" data-answerid="30780690" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="30780690" type="hidden">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">12</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p><strong><em>For android version 5.0 &amp; above</em></strong> </p>
+
+<p>try the <a href="http://developer.android.com/training/material/shadows-clipping.html">Elevation</a> for other views..</p>
+
+<pre style="" class="default prettyprint prettyprinted"><code><span class="pln">android</span><span class="pun">:</span><span class="pln">elevation</span><span class="pun">=</span><span class="str">"10dp"</span></code></pre>
+
+<p>For Buttons,</p>
+
+<pre style="" class="default prettyprint prettyprinted"><code><span class="pln">android</span><span class="pun">:</span><span class="pln">stateListAnimator</span><span class="pun">=</span><span class="str">"@anim/button_state_list_animator"</span></code></pre>
+
+<p><strong>button_state_list_animator.xml</strong> - <a href="https://android.googlesource.com/platform/frameworks/base/+/master/core/res/res/anim/button_state_list_anim_material.xml">https://android.googlesource.com/platform/frameworks/base/+/master/core/res/res/anim/button_state_list_anim_material.xml</a></p>
+
+<p><strong><em>below 5.0 version,</em></strong></p>
+
+<p>For all views,</p>
+
+<pre style="" class="default prettyprint prettyprinted"><code><span class="pln"> android</span><span class="pun">:</span><span class="pln">background</span><span class="pun">=</span><span class="str">"@android:drawable/dialog_holo_light_frame"</span></code></pre>
+
+<p>My output:</p>
+
+<p><img src="android%20-%20How%20to%20provide%20shadow%20to%20Button%20-%20Stack%20Overflow_files/jf5kL.png" alt="enter image description here"></p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/30780690/5060990" title="short permalink to this answer" class="short-link" id="link-post-30780690">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/30780690/edit" class="suggest-edit-post" title="revise and improve this post">edit</a><span class="lsep">|</span><a href="#" class="flag-post-link" title="flag this post for serious problems or moderator attention" data-postid="30780690">flag</a></div>                    </td>
+    <td class="post-signature" align="right">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/30780690/revisions" title="show all edits to this post">edited <span title="2015-07-15 17:46:11Z" class="relativetime">Jul 15 '15 at 17:46</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2015-06-11 12:23:50Z" class="relativetime">Jun 11 '15 at 12:23</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/3879847/ranjith-kumar"><div class="gravatar-wrapper-32"><img src="android%20-%20How%20to%20provide%20shadow%20to%20Button%20-%20Stack%20Overflow_files/l2MFJ.png" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/3879847/ranjith-kumar">Ranjith Kumar</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">2,085</span><span title="3 gold badges"><span class="badge1"></span><span class="badgecount">3</span></span><span title="14 silver badges"><span class="badge2"></span><span class="badgecount">14</span></span><span title="36 bronze badges"><span class="badge3"></span><span class="badgecount">36</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+            
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-30780690" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-30780690" data-rep="50" data-reg="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="32657619"></a>
+<div id="answer-32657619" class="answer" data-answerid="32657619" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="32657619" type="hidden">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">7</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>If you are targeting pre-Lollipop devices, you can use <a href="https://github.com/dmytrodanylyk/shadow-layout">Shadow-Layout</a>, since it easy and you can use it in different kind of layouts.</p>
+
+<p><br>
+<strong>Add shadow-layout to your Gradle file</strong>:</p>
+
+<pre style="" class="default prettyprint prettyprinted"><code><span class="pln">dependencies </span><span class="pun">{</span><span class="pln">
+    compile </span><span class="str">'com.github.dmytrodanylyk.shadow-layout:library:1.0.1'</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<p><br>
+<strong>At the top the xml layout where you have your button, add to the top</strong>: </p>
+
+<pre style="" class="default prettyprint prettyprinted"><code><span class="pln">xmlns</span><span class="pun">:</span><span class="pln">app</span><span class="pun">=</span><span class="str">"http://schemas.android.com/apk/res-auto"</span></code></pre>
+
+<p><em>it will make available the custom attributes.</em></p>
+
+<p><br>
+<strong>Then you put a shadow layout around you Button</strong>:</p>
+
+<pre style="" class="default prettyprint prettyprinted"><code><span class="tag">&lt;com.dd.ShadowLayout</span><span class="pln">
+        </span><span class="atn">android:layout_marginTop</span><span class="pun">=</span><span class="atv">"16dp"</span><span class="pln">
+        </span><span class="atn">android:layout_width</span><span class="pun">=</span><span class="atv">"wrap_content"</span><span class="pln">
+        </span><span class="atn">android:layout_height</span><span class="pun">=</span><span class="atv">"wrap_content"</span><span class="pln">
+        </span><span class="atn">app:sl_shadowRadius</span><span class="pun">=</span><span class="atv">"4dp"</span><span class="pln">
+        </span><span class="atn">app:sl_shadowColor</span><span class="pun">=</span><span class="atv">"#AA000000"</span><span class="pln">
+        </span><span class="atn">app:sl_dx</span><span class="pun">=</span><span class="atv">"0dp"</span><span class="pln">
+        </span><span class="atn">app:sl_dy</span><span class="pun">=</span><span class="atv">"0dp"</span><span class="pln">
+        </span><span class="atn">app:sl_cornerRadius</span><span class="pun">=</span><span class="atv">"56dp"</span><span class="tag">&gt;</span><span class="pln"> 
+
+       </span><span class="tag">&lt;YourButton</span><span class="pln">
+          .... </span><span class="tag">/&gt;</span><span class="pln">
+
+</span><span class="tag">&lt;/com.dd.ShadowLayout&gt;</span></code></pre>
+
+<p>You can then tweak the <code>app:</code> settings to match your required shadow.</p>
+
+<p>Hope it helps.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/32657619/5060990" title="short permalink to this answer" class="short-link" id="link-post-32657619">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/32657619/edit" class="suggest-edit-post" title="revise and improve this post">edit</a><span class="lsep">|</span><a href="#" class="flag-post-link" title="flag this post for serious problems or moderator attention" data-postid="32657619">flag</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2015-09-18 17:14:47Z" class="relativetime">Sep 18 '15 at 17:14</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/4374008/torrao"><div class="gravatar-wrapper-32"><img src="android%20-%20How%20to%20provide%20shadow%20to%20Button%20-%20Stack%20Overflow_files/picture.jpeg" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/4374008/torrao">torrao</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">95</span><span title="1 silver badge"><span class="badge2"></span><span class="badgecount">1</span></span><span title="8 bronze badges"><span class="badge3"></span><span class="badgecount">8</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+            
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-32657619" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-53221708" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of 'useful comment' votes received" class="cool">1</span>
+                        </td>
+                        <td>
+                                <a class="comment-up comment-up-off" title="this comment adds something useful to the post">upvote</a>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                                <td>
+                                    <a class="comment-flag" title="Flag this comment for serious problems or moderator attention">flag</a>
+                                </td>
+                        </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">This is really awesome.. thanks for library reference.. :)</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/1841457/chintan-rathod" title="11766 reputation" class="comment-user owner">Chintan Rathod</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment53221708_32657619"><span title="2015-09-21 06:45:12Z" class="relativetime-clean">Sep 21 '15 at 6:45</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-32657619" data-rep="50" data-reg="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="15333577"></a>
+<div id="answer-15333577" class="answer" data-answerid="15333577" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="15333577" type="hidden">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">2</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Try this if this works for you </p>
+
+<p><img src="android%20-%20How%20to%20provide%20shadow%20to%20Button%20-%20Stack%20Overflow_files/7Ci9y.png" alt="enter image description here"></p>
+
+<pre style="" class="default prettyprint prettyprinted"><code><span class="pln">android</span><span class="pun">:</span><span class="pln">background</span><span class="pun">=</span><span class="str">"@drawable/drop_shadow"</span><span class="pln">
+        android</span><span class="pun">:</span><span class="pln">layout_width</span><span class="pun">=</span><span class="str">"wrap_content"</span><span class="pln">
+        android</span><span class="pun">:</span><span class="pln">layout_height</span><span class="pun">=</span><span class="str">"wrap_content"</span><span class="pln">
+        android</span><span class="pun">:</span><span class="pln">paddingLeft</span><span class="pun">=</span><span class="str">"3dp"</span><span class="pln">
+        android</span><span class="pun">:</span><span class="pln">paddingTop</span><span class="pun">=</span><span class="str">"3dp"</span><span class="pln">
+        android</span><span class="pun">:</span><span class="pln">paddingRight</span><span class="pun">=</span><span class="str">"4dp"</span><span class="pln">
+        android</span><span class="pun">:</span><span class="pln">paddingBottom</span><span class="pun">=</span><span class="str">"5dp"</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/15333577/5060990" title="short permalink to this answer" class="short-link" id="link-post-15333577">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/15333577/edit" class="suggest-edit-post" title="revise and improve this post">edit</a><span class="lsep">|</span><a href="#" class="flag-post-link" title="flag this post for serious problems or moderator attention" data-postid="15333577">flag</a></div>                    </td>
+    <td class="post-signature" align="right">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/15333577/revisions" title="show all edits to this post">edited <span title="2014-10-29 18:00:00Z" class="relativetime">Oct 29 '14 at 18:00</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2013-03-11 07:51:00Z" class="relativetime">Mar 11 '13 at 7:51</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/2013115/djhacktorreborn"><div class="gravatar-wrapper-32"><img src="android%20-%20How%20to%20provide%20shadow%20to%20Button%20-%20Stack%20Overflow_files/b4e53a12d7a98bae2fab281a458c4d2a.png" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/2013115/djhacktorreborn">DjHacktorReborn</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">1,988</span><span title="2 gold badges"><span class="badge1"></span><span class="badgecount">2</span></span><span title="9 silver badges"><span class="badge2"></span><span class="badgecount">9</span></span><span title="24 bronze badges"><span class="badge3"></span><span class="badgecount">24</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+            
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-15333577" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-15333577" data-rep="50" data-reg="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="34496358"></a>
+<div id="answer-34496358" class="answer" data-answerid="34496358" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="34496358" type="hidden">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">1</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>I've tried the code from above and made my own shadow which is little
+ bit closer to what I am trying to achieve. Maybe it will help others 
+too.</p>
+
+<pre style="" class="default prettyprint prettyprinted"><code><span class="tag">&lt;selector</span><span class="pln"> </span><span class="atn">xmlns:android</span><span class="pun">=</span><span class="atv">"http://schemas.android.com/apk/res/android"</span><span class="tag">&gt;</span><span class="pln">
+    </span><span class="tag">&lt;item&gt;</span><span class="pln">
+        </span><span class="tag">&lt;layer-list&gt;</span><span class="pln">
+            </span><span class="tag">&lt;item</span><span class="pln"> </span><span class="atn">android:left</span><span class="pun">=</span><span class="atv">"5dp"</span><span class="pln"> </span><span class="atn">android:top</span><span class="pun">=</span><span class="atv">"5dp"</span><span class="tag">&gt;</span><span class="pln">
+                </span><span class="tag">&lt;shape&gt;</span><span class="pln">
+                    </span><span class="tag">&lt;corners</span><span class="pln"> </span><span class="atn">android:radius</span><span class="pun">=</span><span class="atv">"3dp"</span><span class="pln"> </span><span class="tag">/&gt;</span><span class="pln">
+                    </span><span class="tag">&lt;gradient</span><span class="pln">
+                        </span><span class="atn">android:angle</span><span class="pun">=</span><span class="atv">"315"</span><span class="pln">
+                        </span><span class="atn">android:endColor</span><span class="pun">=</span><span class="atv">"@android:color/transparent"</span><span class="pln">
+                        </span><span class="atn">android:startColor</span><span class="pun">=</span><span class="atv">"@android:color/black"</span><span class="pln">
+                        </span><span class="atn">android:type</span><span class="pun">=</span><span class="atv">"radial"</span><span class="pln">
+                        </span><span class="atn">android:centerX</span><span class="pun">=</span><span class="atv">"0.55"</span><span class="pln">
+                        </span><span class="atn">android:centerY</span><span class="pun">=</span><span class="atv">"0"</span><span class="pln">
+                        </span><span class="atn">android:gradientRadius</span><span class="pun">=</span><span class="atv">"300"</span><span class="tag">/&gt;</span><span class="pln">
+                    </span><span class="tag">&lt;padding</span><span class="pln"> </span><span class="atn">android:bottom</span><span class="pun">=</span><span class="atv">"1dp"</span><span class="pln"> </span><span class="atn">android:left</span><span class="pun">=</span><span class="atv">"0dp"</span><span class="pln"> </span><span class="atn">android:right</span><span class="pun">=</span><span class="atv">"3dp"</span><span class="pln"> </span><span class="atn">android:top</span><span class="pun">=</span><span class="atv">"0dp"</span><span class="pln"> </span><span class="tag">/&gt;</span><span class="pln">
+                </span><span class="tag">&lt;/shape&gt;</span><span class="pln">
+            </span><span class="tag">&lt;/item&gt;</span><span class="pln">
+            </span><span class="tag">&lt;item</span><span class="pln"> </span><span class="atn">android:bottom</span><span class="pun">=</span><span class="atv">"2dp"</span><span class="pln"> </span><span class="atn">android:left</span><span class="pun">=</span><span class="atv">"3dp"</span><span class="tag">&gt;</span><span class="pln">
+                </span><span class="tag">&lt;shape&gt;</span><span class="pln">
+                    </span><span class="tag">&lt;corners</span><span class="pln"> </span><span class="atn">android:radius</span><span class="pun">=</span><span class="atv">"1dp"</span><span class="pln"> </span><span class="tag">/&gt;</span><span class="pln">
+                    </span><span class="tag">&lt;solid</span><span class="pln"> </span><span class="atn">android:color</span><span class="pun">=</span><span class="atv">"@color/colorPrimary"</span><span class="pln"> </span><span class="tag">/&gt;</span><span class="pln">
+
+
+                </span><span class="tag">&lt;/shape&gt;</span><span class="pln">
+            </span><span class="tag">&lt;/item&gt;</span><span class="pln">
+        </span><span class="tag">&lt;/layer-list&gt;</span><span class="pln">
+    </span><span class="tag">&lt;/item&gt;</span><span class="pln">
+
+</span><span class="tag">&lt;/selector&gt;</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/34496358/5060990" title="short permalink to this answer" class="short-link" id="link-post-34496358">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/34496358/edit" class="suggest-edit-post" title="revise and improve this post">edit</a><span class="lsep">|</span><a href="#" class="flag-post-link" title="flag this post for serious problems or moderator attention" data-postid="34496358">flag</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2015-12-28 15:37:39Z" class="relativetime">Dec 28 '15 at 15:37</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/5561990/rexsplode"><div class="gravatar-wrapper-32"><img src="android%20-%20How%20to%20provide%20shadow%20to%20Button%20-%20Stack%20Overflow_files/photo_002.jpg" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/5561990/rexsplode">RexSplode</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">352</span><span title="1 silver badge"><span class="badge2"></span><span class="badgecount">1</span></span><span title="12 bronze badges"><span class="badge3"></span><span class="badgecount">12</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+            
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-34496358" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-34496358" data-rep="50" data-reg="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+									<a name="new-answer"></a>
+						<form id="post-form" action="/questions/15333529/answer/submit" method="post" class="post-form">
+						    <input id="post-id" value="15333529" type="hidden">
+                            <input id="qualityBanWarningShown" name="qualityBanWarningShown" value="false" type="hidden">
+                            <input name="referrer" value="https://www.google.com.ua" type="hidden">
+							<h2 class="space">Your Answer</h2>
+
+
+            <script>
+            StackExchange.ifUsing("editor", function () {
+                StackExchange.using("externalEditor", function () {
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.init();
+                    });
+                });
+            }, "code-snippets");
+        </script>
+    
+
+<script>
+    StackExchange.ready(function() {
+        initTagRenderer("".split(" "), "".split(" "));
+       
+        StackExchange.using("externalEditor", function() {
+                // Have to fire editor after snippets, if snippets enabled
+                if (StackExchange.options.snippets.enabled) {
+                    StackExchange.using("snippets", function() {
+                        createEditor();
+                    });
+                }
+                else {
+                    createEditor();
+                }
+            });
+
+            function createEditor() {
+                prepareEditor({
+                    heartbeatType: 'answer',
+                convertImagesToLinks: false,
+                reputationToPostImages: null,
+                bindNavPrevention: true,
+                postfix: "",
+                    onDemand: false,
+                    discardSelector: ".discard-answer"
+                    ,immediatelyShowMarkdownHelp:true
+                    });
+                
+
+        }
+    });  
+</script>
+
+
+<div id="post-editor" class="post-editor js-post-editor">
+
+    <div style="position: relative;">     
+        <div class="wmd-container">
+            <div id="wmd-button-bar" class="wmd-button-bar"><ul class="wmd-button-row" id="wmd-button-row"><li title="Strong &lt;strong&gt; Ctrl+B" id="wmd-bold-button" style="left: 0px;" class="wmd-button"><span style="background-position: 0px 0px;"></span></li><li title="Emphasis &lt;em&gt; Ctrl+I" id="wmd-italic-button" style="left: 25px;" class="wmd-button"><span style="background-position: -20px 0px;"></span></li><li id="wmd-spacer1" class="wmd-spacer wmd-spacer1"></li><li title="Hyperlink &lt;a&gt; Ctrl+L" id="wmd-link-button" style="left: 75px;" class="wmd-button"><span style="background-position: -40px 0px;"></span></li><li title="Blockquote &lt;blockquote&gt; Ctrl+Q" id="wmd-quote-button" style="left: 100px;" class="wmd-button"><span style="background-position: -60px 0px;"></span></li><li title="Code Sample &lt;pre&gt;&lt;code&gt; Ctrl+K" id="wmd-code-button" style="left: 125px;" class="wmd-button"><span style="background-position: -80px 0px;"></span></li><li title="Image &lt;img&gt; Ctrl+G" id="wmd-image-button" style="left: 150px;" class="wmd-button"><span style="background-position: -100px 0px;"></span></li><li class="wmd-button wmd-snippet-button" style="left:175px" id="wmd-snippet-button" title="JavaScript/HTML/CSS snippet Ctrl-M"><span style="background-image: url(&quot;/content/balsamiq/wmd-mockup-button.png?v=4&quot;);"></span></li><li style="left: 220px;" id="wmd-spacer2" class="wmd-spacer wmd-spacer2"></li><li title="Numbered List &lt;ol&gt; Ctrl+O" id="wmd-olist-button" style="left: 225px;" class="wmd-button"><span style="background-position: -120px 0px;"></span></li><li title="Bulleted List &lt;ul&gt; Ctrl+U" id="wmd-ulist-button" style="left: 250px;" class="wmd-button"><span style="background-position: -140px 0px;"></span></li><li title="Heading &lt;h1&gt;/&lt;h2&gt; Ctrl+H" id="wmd-heading-button" style="left: 275px;" class="wmd-button"><span style="background-position: -160px 0px;"></span></li><li title="Horizontal Rule &lt;hr&gt; Ctrl+R" id="wmd-hr-button" style="left: 300px;" class="wmd-button"><span style="background-position: -180px 0px;"></span></li><li style="left: 346px;" id="wmd-spacer3" class="wmd-spacer wmd-spacer3"></li><li title="Undo - Ctrl+Z" id="wmd-undo-button" style="left: 350px;" class="wmd-button"><span style="background-position: -200px -20px;"></span></li><li title="Redo - Ctrl+Shift+Z" id="wmd-redo-button" style="left: 375px;" class="wmd-button"><span style="background-position: -220px -20px;"></span></li><li title="Markdown Editing Help" style="right: 0px; left: 639px;" id="wmd-help-button" class="wmd-button wmd-help-button active-help"><span style="background-position: -240px 0px;"></span></li><div style="right: -13.4167px; width: 660px; top: 41px;" id="mdhelp" class="mdhelp">
+    <ul id="mdhelp-tabs" class="mdhelp-tabs">
+        <li data-tab="mdhelp-links" data-buttons="link">Links</li>
+        <li data-tab="mdhelp-images" data-buttons="image">Images</li>
+        <li data-tab="mdhelp-styles" data-buttons="bold,italic,heading">Styling/Headers</li>
+        <li data-tab="mdhelp-lists" data-buttons="olist,ulist">Lists</li>
+        <li data-tab="mdhelp-blockquotes" data-buttons="quote">Blockquotes</li>
+        <li data-tab="mdhelp-code" data-buttons="code">Code</li>
+        <li data-tab="mdhelp-html"> HTML </li>
+        <li style="float:right"><a href="http://stackoverflow.com/editing-help" target="_blank">advanced help »</a></li>
+    </ul>
+    
+    <div class="mdhelp-tab" id="mdhelp-links">
+            <p>
+                In most cases, a plain URL will be recognized as such and automatically linked:
+            </p>
+            <pre>Visit http://area51.stackexchange.com/ regularly!
+Use angle brackets to force linking: Have you seen &lt;http://superuser.com&gt;?
+</pre>
+            <p>
+                To create fancier links, use Markdown:
+            </p>
+                <pre>Here's [a link](http://www.example.com/)! And a reference-style link to [a panda][1].
+References don't have to be [numbers][question].
+
+ [1]: http://notfound.stackexchange.com/
+ [question]: http://english.stackexchange.com/questions/11481
+</pre>
+                <p>You can add tooltips to links:</p>
+<pre>Click [here](http://diy.stackexchange.com<span class="spaces">&nbsp;</span>"this text appears when you mouse over")!
+This works with [reference links][blog] as well.
+
+ [blog]: http://blog.stackoverflow.com/<span class="spaces">&nbsp;</span>"click here for updates"
+</pre>
+    </div>
+
+    <div class="mdhelp-tab" id="mdhelp-images">
+        <p>Images are exactly like links, but they have an exclamation point in front of them:</p>
+        <pre>![a busy cat](http://sstatic.net/stackoverflow/img/error-lolcat-problemz.jpg)
+![two muppets][1]
+
+ [1]: http://i.imgur.com/I5DFV.jpg "tooltip"
+</pre>
+        <p>
+            The word in square brackets is the alt text, which gets displayed if the browser
+ can't show the image. Be sure to include meaningful alt text for screen-reading
+ software.
+        </p>
+   
+    </div>
+    <div class="mdhelp-tab" id="mdhelp-styles">
+        <div class="col1">
+            <p>Be sure to use text styling sparingly; only where it helps readability.</p>
+                <pre>*This is italicized*, and so
+is _this_.
+
+**This is bold**, just like __this__.
+
+You can ***combine*** them
+if you ___really have to___.
+</pre>
+        
+        </div>
+        <div class="col2">
+            <p>
+                To break your text into sections, you can use headers:
+            </p>
+                <pre>A Large Header
+==============
+
+Smaller Subheader
+-----------------
+</pre>
+            <p>
+                Use hash marks if you need several levels of headers:</p>
+    <pre># Header 1 #
+## Header 2 ##
+### Header 3 ###
+</pre>
+
+            
+        </div>
+
+    </div>
+    <div class="mdhelp-tab" id="mdhelp-lists">
+        <p>Both bulleted and numbered lists are possible:</p>
+        <div class="col1">
+<pre>-<span class="spaces">&nbsp;</span>Use a minus sign for a bullet
++<span class="spaces">&nbsp;</span>Or plus sign
+*<span class="spaces">&nbsp;</span>Or an asterisk
+
+1.<span class="spaces">&nbsp;</span>Numbered lists are easy
+2.<span class="spaces">&nbsp;</span>Markdown keeps track of
+ the numbers for you
+7.<span class="spaces">&nbsp;</span>So this will be item 3.
+</pre>
+        </div>
+        <div class="col2">
+<pre>1.<span class="spaces">&nbsp;</span>Lists in a list item:
+<span class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</span>-<span class="spaces">&nbsp;</span>Indented four spaces.
+<span class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>*<span class="spaces">&nbsp;</span>indented eight spaces.
+<span class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</span>-<span class="spaces">&nbsp;</span>Four spaces again.
+2.<span class="spaces">&nbsp;&nbsp;</span>You can have multiple
+<span class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</span>paragraphs in a list items.
+<span class="spaces">&nbsp;</span>
+<span class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</span>Just be sure to indent.
+</pre>        
+        </div>
+    </div>
+
+    <div class="mdhelp-tab" id="mdhelp-blockquotes">
+        <div class="col1">
+            <pre>&gt; Create a blockquote by
+&gt; prepending “&gt;” to each line.
+&gt;
+&gt; Other formatting also works here, e.g.
+&gt;
+&gt; 1. Lists or
+&gt; 2. Headings:
+&gt;
+&gt; ## Quoted Heading ##
+</pre>
+        </div>
+        <div class="col2">
+                <p>
+                    You can even put blockquotes in blockquotes:
+                </p>
+                <pre>&gt; A standard blockquote is indented
+&gt; &gt; A nested blockquote is indented more
+&gt; &gt; &gt; &gt; You can nest to any depth.
+</pre>
+        </div>
+    </div>
+
+    <div class="mdhelp-tab" id="mdhelp-code">
+        <p>
+            To create code blocks or other preformatted text, indent by four spaces:
+        </p>
+        <pre><span class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</span>This will be displayed in a monospaced font. The first four spaces
+<span class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</span>will be stripped off, but all other whitespace will be preserved.
+<span class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</span>Markdown and HTML are turned off in code blocks:
+<span class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</span>&lt;i&gt;This is not italic&lt;/i&gt;, and [this is not a link](http://example.com)
+</pre>
+        <p>
+            To create not a block, but an inline code span, use backticks:
+        </p>
+        <pre>The `$` character is just a shortcut for `window.jQuery`.
+</pre>
+        <p>
+            If you want to have a preformatted block within a list, indent by eight spaces:
+        </p>
+        <pre>1. This is normal text.
+2. So is this, but now follows a code block:
+<span class="spaces">&nbsp;</span>
+<span class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Skip a line and indent eight spaces.
+<span class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>That's four spaces for the list
+<span class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>and four to trigger the code block.
+</pre>
+    </div>
+
+    <div class="mdhelp-tab" id="mdhelp-html">
+        <p>
+            If you need to do something that Markdown can't handle, use HTML. Note that <a href="http://meta.stackexchange.com/questions/1777/what-html-tags-are-allowed" target="_blank">we only support a very strict subset of HTML!</a>
+        </p>
+        <pre>Strikethrough humor is &lt;strike&gt;funny&lt;/strike&gt;.
+</pre>
+        <p>
+            Markdown is smart enough not to mangle your span-level HTML:
+        </p>
+        <pre>&lt;b&gt;Markdown works *fine* in here.&lt;/b&gt;
+</pre>
+        <p>
+            Block-level HTML elements have a few restrictions:
+        </p>
+        <ol>
+            <li>They must be separated from surrounding text by blank lines.</li>
+            <li>The begin and end tags of the outermost block element must not be indented.</li>
+            <li>Markdown can't be used within HTML blocks.</li>
+        </ol>
+        <br>
+        <pre>&lt;pre&gt;
+ You can &lt;em&gt;not&lt;/em&gt; use Markdown in here.
+&lt;/pre&gt;
+</pre>
+    </div>
+
+    <div class="cbt"></div>
+</div></ul></div>
+            <div style="clear: both; height: 26px;"></div><textarea id="wmd-input" class="wmd-input processed" name="post-text" cols="92" rows="15" tabindex="101" data-min-length=""></textarea>
+        <div style="margin-right: -1px;" class="grippie"></div></div>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height:24px; display:none;">draft saved</div>
+
+    <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height:24px; display:none;">draft discarded</div>
+
+    <div class="community-option">
+        <input id="communitymode" name="communitymode" type="checkbox">
+        <label for="communitymode" title="Marking an answer community wiki encourages others to edit it by lowering the reputation barrier required to edit. However, you will not gain any upvote reputation from it. This cannot be undone.">community wiki</label>
+    </div>
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" value="f7e860c1905c0ca29719bb021896ee9e" type="hidden">
+        <input id="author" name="author" type="text">
+    </div>
+
+
+
+</div>
+							<div style="position: relative;">
+								
+								
+							</div>
+           
+															<div class="form-submit cbt">
+									<input id="submit-button" value="Post Your Answer" tabindex="110" type="submit">
+									<a href="#" class="discard-answer dno">discard</a>
+								</div>
+						</form>
+
+
+
+						<h2 class="bottom-notice" data-loc="1">
+Not the answer you're looking for?							Browse other questions tagged <a href="http://stackoverflow.com/questions/tagged/android" class="post-tag" title="show questions tagged 'android'" rel="tag"><img src="android%20-%20How%20to%20provide%20shadow%20to%20Button%20-%20Stack%20Overflow_files/tKsDb.png" alt="" class="sponsor-tag-img" height="16" width="18">android</a> <a href="http://stackoverflow.com/questions/tagged/shadow" class="post-tag" title="show questions tagged 'shadow'" rel="tag">shadow</a>  or <a href="http://stackoverflow.com/questions/ask">ask your own question</a>.						</h2>
+			</div>
+		</div>
+				<div id="sidebar" class="show-votes">
+						    <div class="module question-stats">
+			        <table id="qinfo">
+			            <tbody><tr>
+			                <td>
+			                    <p class="label-key">asked</p>
+			                </td>
+			                <td style="padding-left: 10px">
+			                    <p class="label-key" title="2013-03-11 07:46:45Z"><b>2 years ago</b></p>
+			                </td>
+			            </tr>
+			            <tr>
+			                <td>
+			                    <p class="label-key">viewed</p>
+			                </td>
+
+			                <td style="padding-left: 10px">
+			                    <p class="label-key">
+			                        <b>44007 times</b>
+			                    </p>
+			                </td>
+			            </tr>
+			                <tr>
+			                    <td>
+			                        <p class="label-key">active</p>
+			                    </td>
+			                    <td style="padding-left: 10px">
+			                        <p class="label-key"><b><a href="http://stackoverflow.com/questions/15333529/how-to-provide-shadow-to-button?lastactivity" class="lastactivity-link" title="2015-12-28 15:37:39Z">25 days ago</a></b></p>
+			                    </td>
+			                </tr>
+			        </tbody></table>
+			    </div>
+			<div class="module community-bulletin" data-tracker="cb=1">
+    <div class="related">
+                <div class="bulletin-title">
+                    Featured on Meta
+                </div>
+                <hr>
+    <div class="spacer">
+        <div class="bulletin-item-type">
+                <a href="http://meta.stackoverflow.com/questions/314636/the-developer-story-part-2-we-didnt-explain-that-very-well?cb=1" class="question-hyperlink">
+<div class="favicon favicon-stackoverflowmeta" title="Meta Stack Overflow"></div>                </a>
+            </div>
+                <div class="bulletin-item-content">
+                    <a href="http://meta.stackoverflow.com/questions/314636/the-developer-story-part-2-we-didnt-explain-that-very-well?cb=1" class="question-hyperlink">The Developer Story Part 2: We didn't explain that very well</a>
+                </div>
+                <br class="cbt">
+            </div>
+                <div class="bulletin-title">
+                    Hot Meta Posts
+                </div>
+                <hr>
+    <div class="spacer">
+        <div class="bulletin-item-type">
+                <span title="Vote score (upvotes - downvotes)">23</span>
+            </div>
+                <div class="bulletin-item-content">
+                    <a href="http://meta.stackoverflow.com/questions/315109/can-i-search-posts-which-has-taga-but-does-not-have-tagb?cb=1" class="question-hyperlink">Can I search posts which has TagA but does not have TagB?</a>
+                </div>
+                <br class="cbt">
+            </div>
+    <div class="spacer">
+        <div class="bulletin-item-type">
+                <span title="Vote score (upvotes - downvotes)">8</span>
+            </div>
+                <div class="bulletin-item-content">
+                    <a href="http://meta.stackoverflow.com/questions/315249/please-burn-some-jrxml-weed-under-my-oak?cb=1" class="question-hyperlink">Please burn some [jrxml] weed under my oak</a>
+                </div>
+                <br class="cbt">
+            </div>
+    <div class="spacer">
+        <div class="bulletin-item-type">
+                <span title="Vote score (upvotes - downvotes)">41</span>
+            </div>
+                <div class="bulletin-item-content">
+                    <a href="http://meta.stackoverflow.com/questions/315159/why-are-the-editor-keyboard-shortcuts-not-documented?cb=1" class="question-hyperlink">Why are the editor keyboard shortcuts not documented?</a>
+                </div>
+                <br class="cbt">
+            </div>
+    </div>
+</div>			
+			<script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,8277,"adzerk1038567734",[5,17,2221]).setZone(45); });
+            </script>
+            <div class="everyonelovesstackoverflow" id="adzerk1038567734"><a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6NSwiYnQiOjAsImNtIjozNDkyNjEsImNoIjoxMTc4LCJjayI6e30sImNyIjoxMjg2ODg2LCJkaSI6ImZlNmU0MThjNjFjYTQ3MjFiMTUxNGM0Zjg5ZjAwMTUwIiwiZG0iOjEsImZjIjoxNDA5ODM4LCJmbCI6OTgyMDc5LCJpcCI6IjE3Ni4zNy40OC45NSIsImt3IjoiYW5kcm9pZCxzaGFkb3cseC11c2VyLXJlZ2lzdGVyZWQiLCJudyI6MjIsInBjIjowLCJlYyI6MCwicHIiOjE1NjgsInJ0IjoyLCJyZiI6Imh0dHBzOi8vd3d3Lmdvb2dsZS5jb20udWEiLCJzdCI6ODI3NywidWsiOiJ1ZTEtY2UwYTlkNjBkODNhNDEwOTljMzEyMTA4OTA3MWQwMDciLCJ6biI6NDUsInRzIjoxNDUzNDg3ODE0NDEyLCJiZiI6dHJ1ZSwicG4iOiJhZHplcmsxMDM4NTY3NzM0IiwidXIiOiJodHRwczovL3d3dy5zdXJ2ZXltb25rZXkuY29tL3Ivc28tc3VydmV5LTIwMTYtaG91c2UifQ&amp;s=18YSUa72aXuaSFwQPETLMHowt5U" rel="nofollow" target="_blank" title=""><img class="zemkenjjnmpvkdciwfji" src="android%20-%20How%20to%20provide%20shadow%20to%20Button%20-%20Stack%20Overflow_files/40aca6e6a9d44f8ab5a79fb1b5c2c9e7.png" title="" alt="" height="250" width="300" border="0"></a><img class="zemkenjjnmpvkdciwfji" src="android%20-%20How%20to%20provide%20shadow%20to%20Button%20-%20Stack%20Overflow_files/i_002.gif" style="position:absolute;" height="0px" width="0px" border="0"></div>
+        <div class=" blue nearyou tagged" id="hireme"><a href="http://stackoverflow.com/jobs/location/Kiev%2C%20Ukraine" target="_blank" data-loc="Kiev%2C%20Ukraine" data-tz="1" data-ti="1" class="top"><span>Jobs near you</span></a><div class="middle"><ul class="jobs"><li><a data-at="0" data-tz="3" data-ti="190407" href="http://stackoverflow.com/jobs/104480/senior-big-data-software-engineer-90k-100-crossover" target="_blank" title="Senior Big Data Software Engineer- $90K, 100% remote position at Crossover. Click to learn more.">Senior Big Data Software Engineer- $90K, 100% remote position<br><div class="company">Crossover</div><div class="location" title="Kiev, Ukraine / remote">Kiev, Ukraine / remote</div><span class="post-tag highlight">java</span><span class="post-tag">linux</span></a></li><li><a data-at="0" data-tz="3" data-ti="189270" href="http://stackoverflow.com/jobs/103335/lisp-software-architect-60k-100-remote-crossover" target="_blank" title="Lisp Software Architect - $60k, 100% remote position at Crossover. Click to learn more.">Lisp Software Architect - $60k, 100% remote position<br><div class="company">Crossover</div><div class="location" title="Kiev, Ukraine / remote">Kiev, Ukraine / remote</div><span class="post-tag">c++</span><span class="post-tag">visual-studio</span></a></li></ul></div><div class="bottom"><a class="city" href="http://stackoverflow.com/jobs/location/Kiev%2C%20Ukraine" target="_blank" data-at="0" data-tz="2" data-ti="0" data-loc="Kiev%2C%20Ukraine">More jobs near Kiev…</a></div><img class="impression" src="android%20-%20How%20to%20provide%20shadow%20to%20Button%20-%20Stack%20Overflow_files/i.gif" style="display:none;"></div>
+			  
+    
+            <div class="module sidebar-linked">
+	<h4 id="h-linked">Linked</h4>
+	<div class="linked" data-tracker="lq=1">
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/3567312?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">25</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/3567312/android-drop-shadow-on-view?lq=1" class="question-hyperlink">Android Drop Shadow on View</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/9974803?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">7</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/9974803/android-buttons-background-as-shape-with-shadow?lq=1" class="question-hyperlink">Android Button's background as shape with Shadow</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/22600528?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">0</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/22600528/android-studio-adding-style-to-buttons?lq=1" class="question-hyperlink">Android studio- Adding style to buttons</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/6563927?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">0</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/6563927/how-to-make-shadow-effect-for-abutton-in-android?lq=1" class="question-hyperlink">How to make shadow effect for abutton in android?</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/27711709?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">0</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/27711709/android-floating-action-button-like-shadow-on-pre-lollipop-devices?lq=1" class="question-hyperlink">android floating action button like shadow on pre lollipop devices</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/16898794?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">1</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/16898794/android-how-to-add-shadow-to-app-widget?lq=1" class="question-hyperlink">Android: how to add shadow to App Widget</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/27211443?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">1</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/27211443/what-technology-used-for-designing-google-inbox-ui?lq=1" class="question-hyperlink">What technology used for designing Google inbox UI</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/23627914?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">0</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/23627914/android-add-semi-transparent-different-color-border-and-shadow-effect-to-image?lq=1" class="question-hyperlink">android add semi-transparent different color border and shadow effect to image</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/26541863?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">1</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/26541863/how-to-create-a-button-with-shadow?lq=1" class="question-hyperlink">how to create a button with shadow</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/26251168?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">0</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/26251168/shadow-surround-the-button-with-the-use-of-custom-style?lq=1" class="question-hyperlink">Shadow surround the button with the use of custom style</a>
+</div>					<div class="spacer more">
+				<a href="http://stackoverflow.com/questions/linked/15333529?lq=1">see more linked questions…</a>
+			</div>
+	</div>
+</div>
+
+				<div class="module sidebar-related">
+					<h4 id="h-related">Related</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/4406524?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">20
+    </div>
+</a><a href="http://stackoverflow.com/questions/4406524/how-to-set-shadow-to-a-view-in-android?rq=1" class="question-hyperlink">how to set shadow to a View in android?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/5523936?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">21
+    </div>
+</a><a href="http://stackoverflow.com/questions/5523936/how-to-get-shadow-on-android-linear-layout?rq=1" class="question-hyperlink">How to get shadow on android linear layout?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/10084537?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">4
+    </div>
+</a><a href="http://stackoverflow.com/questions/10084537/android-button-border-shadow?rq=1" class="question-hyperlink">Android Button border shadow</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/13394668?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">2
+    </div>
+</a><a href="http://stackoverflow.com/questions/13394668/shadow-for-custom-button-layout-android?rq=1" class="question-hyperlink">Shadow for custom button layout-Android</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/13644390?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">1
+    </div>
+</a><a href="http://stackoverflow.com/questions/13644390/android-drop-shadow-to-button?rq=1" class="question-hyperlink">Android - Drop Shadow to Button</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/24480425?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">11
+    </div>
+</a><a href="http://stackoverflow.com/questions/24480425/android-l-fab-button-shadow?rq=1" class="question-hyperlink">Android L FAB Button shadow</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/28396091?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/28396091/android-button-remove-shadow?rq=1" class="question-hyperlink">Android Button Remove Shadow</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/28744659?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">7
+    </div>
+</a><a href="http://stackoverflow.com/questions/28744659/removing-the-shadow-on-an-android-button?rq=1" class="question-hyperlink">Removing the shadow on an android button</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/28756035?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">8
+    </div>
+</a><a href="http://stackoverflow.com/questions/28756035/how-to-remove-button-shadow-android?rq=1" class="question-hyperlink">How to remove button shadow (android)</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/30712244?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/30712244/drop-shadow-for-floating-action-button?rq=1" class="question-hyperlink">Drop shadow for Floating Action Button</a>
+</div>
+
+                    </div>
+				</div>
+            
+<div id="hot-network-questions" class="module">
+    <h4>
+        <a href="http://stackexchange.com/questions?tab=hot" class="js-gps-track" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })">
+            Hot Network Questions
+        </a>
+    </h4>
+    <ul>
+            <li>
+                <div class="favicon favicon-physics" title="Physics Stack Exchange"></div><a href="http://physics.stackexchange.com/questions/230703/do-we-know-why-there-is-a-speed-limit-in-our-universe" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:151 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Do we know WHY there is a speed limit in our universe?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-security" title="Information Security Stack Exchange"></div><a href="http://security.stackexchange.com/questions/110734/why-didnt-oses-securely-delete-files-right-from-the-beginning-and-why-do-they" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:162 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why didn't OSes securely delete files right from the beginning? And why do they still not do this?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-askubuntu" title="Ask Ubuntu"></div><a href="http://askubuntu.com/questions/724093/this-computer-will-soon-stop-receiving-google-chrome-updates-because-this-linux" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:89 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    This computer will soon stop receiving Google Chrome
+ updates because this Linux system will no longer be supported
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-workplace" title="The Workplace Stack Exchange"></div><a href="http://workplace.stackexchange.com/questions/60899/my-manager-is-rearranging-my-workspace-without-consulting-me-should-i-challenge" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:423 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    My manager is rearranging my workspace without consulting me, should I challenge them about it?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-security" title="Information Security Stack Exchange"></div><a href="http://security.stackexchange.com/questions/110676/how-should-i-securely-type-a-password-in-front-of-a-lot-of-people" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:162 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How should I securely type a password in front of a lot of people?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-history" title="History Stack Exchange"></div><a href="http://history.stackexchange.com/questions/27263/was-anne-franks-story-common" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:324 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Was Anne Frank's story common?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-workplace" title="The Workplace Stack Exchange"></div><a href="http://workplace.stackexchange.com/questions/60857/what-to-do-when-a-new-employee-makes-basic-spelling-and-grammar-mistakes" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:423 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What to do when a new employee makes basic spelling and grammar mistakes?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-vi" title="Vi and Vim Stack Exchange"></div><a href="http://vi.stackexchange.com/questions/6214/insert-a-string-of-sequential-numbers-in-one-line" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:599 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Insert a string of sequential numbers in one line
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-puzzling" title="Puzzling Stack Exchange"></div><a href="http://puzzling.stackexchange.com/questions/25667/the-train-jumpers" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:559 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    The Train Jumpers
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-aviation" title="Aviation Stack Exchange"></div><a href="http://aviation.stackexchange.com/questions/24530/do-any-commercial-airline-models-have-a-parachute-at-rear-to-help-in-landings" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:528 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Do any commercial airline models have a parachute at rear to help in landings?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-puzzling" title="Puzzling Stack Exchange"></div><a href="http://puzzling.stackexchange.com/questions/25598/what-is-my-four-digit-car-number" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:559 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What is my four digit car number?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="http://scifi.stackexchange.com/questions/115832/who-killed-the-eldest-brother-and-stole-the-elder-wand" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Who killed the Eldest Brother and stole the Elder Wand?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-serverfault" title="Server Fault"></div><a href="http://serverfault.com/questions/750684/does-memtest86-test-memory-which-is-used-to-run-itself" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:2 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Does memtest86+ test memory which is used to run itself?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-stats" title="Cross Validated"></div><a href="http://stats.stackexchange.com/questions/191917/all-of-these-data-points-come-from-the-same-distribution-how-to-test" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:65 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    " all of these data points come from the same distribution." How to test?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-stackoverflow" title="Stack Overflow"></div><a href="http://stackoverflow.com/questions/34948627/does-it-make-any-difference-to-use-unsafe-inside-or-outside-a-loop" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:1 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Does it make any difference to use unsafe inside or outside a loop?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-mathematica" title="Mathematica Stack Exchange"></div><a href="http://mathematica.stackexchange.com/questions/104593/list-of-mathematica-related-acronyms-and-their-real-meaning" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:387 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    List of Mathematica related acronyms and their real meaning
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-outdoors" title="The Great Outdoors Stack Exchange"></div><a href="http://outdoors.stackexchange.com/questions/10678/is-there-any-way-to-dispose-of-liquid-fuel" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:395 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is there any way to dispose of liquid fuel?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-money" title="Personal Finance &amp; Money Stack Exchange"></div><a href="http://money.stackexchange.com/questions/58391/why-is-stock-dilution-legal" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:93 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why is stock dilution legal?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-gaming" title="Arqade"></div><a href="http://gaming.stackexchange.com/questions/252818/is-there-a-merchant-who-sells-shipments-of-wood" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:41 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is there a merchant who sells shipments of wood?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-gis" title="Geographic Information Systems Stack Exchange"></div><a href="http://gis.stackexchange.com/questions/177837/make-several-rasters-more-uniform" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:79 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Make several rasters more uniform
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-money" title="Personal Finance &amp; Money Stack Exchange"></div><a href="http://money.stackexchange.com/questions/58343/my-father-has-passed-away-and-i-want-to-buy-his-home" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:93 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    My father has passed away and I want to buy his home
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-unix" title="Unix &amp; Linux Stack Exchange"></div><a href="http://unix.stackexchange.com/questions/256497/on-what-systems-is-foo-bar-different-from-foo-bar" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:106 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    On what systems is //foo/bar different from /foo/bar?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-physics" title="Physics Stack Exchange"></div><a href="http://physics.stackexchange.com/questions/230685/why-are-four-legged-chairs-so-common" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:151 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why are four-legged chairs so common?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-dba" title="Database Administrators Stack Exchange"></div><a href="http://dba.stackexchange.com/questions/126996/alias-of-count-is-not-being-recognized-by-sql-server" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:182 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Alias of COUNT is not being "recognized" by SQL Server
+                </a>
+
+            </li>
+    </ul>
+
+        
+</div>
+		</div>
+	
+<div id="feed-link">
+    <div id="feed-link-text">
+        <a href="http://stackoverflow.com/feeds/question/15333529" title="feed of this question and its answers">
+            <span class="feed-icon"></span>question feed
+        </a>
+    </div>
+</div>	<script>
+StackExchange.ready(function(){$.get('/posts/15333529/ivc/d073');});
+</script>
+<noscript>
+    <div><img src="/posts/15333529/ivc/d073" class="dno" alt="" width="0" height="0"></div>
+</noscript><div style="display:none" id="prettify-lang">default</div></div>
+
+    <script>
+        $('#wmd-input').one("keypress", function() {
+            $.ajax({
+                url: '/accounts/email-settings-form',
+                cache: false,
+                success: function(data) {
+                    $('#submit-button').parent().prepend(data);
+                }
+            });
+        });
+
+    </script>
+
+        </div>
+    </div>
+    <div id="footer" class="categories">
+        <div class="footerwrap">
+            <div id="footer-menu">
+                <div class="top-footer-links">
+                        <a href="http://stackoverflow.com/tour">tour</a>
+                    <a href="http://stackoverflow.com/help">help</a>
+                    <a href="http://blog.stackoverflow.com/?blb=1">blog</a>
+                        <a href="http://chat.stackoverflow.com/">chat</a>
+                    <a href="http://data.stackexchange.com/">data</a>
+                    <a href="http://stackexchange.com/legal">legal</a>
+                    <a href="http://stackexchange.com/legal/privacy-policy">privacy policy</a>
+                    <a href="http://stackexchange.com/work-here">work here</a>
+                    <a href="http://stackexchange.com/mediakit">advertising info</a>
+
+                    <a onclick='StackExchange.switchMobile("on")'>mobile</a>
+                    <b><a href="http://stackoverflow.com/contact">contact us</a></b>
+                        <b><a href="http://meta.stackoverflow.com/">feedback</a></b>
+                    
+                </div>
+                <div id="footer-sites">
+                    <table>
+    <tbody><tr>
+            <th colspan="3">
+                Technology
+            </th>
+            <th>
+                Life / Arts
+            </th>
+            <th>
+                Culture / Recreation
+            </th>
+            <th>
+                Science
+            </th>
+            <th>
+                Other
+            </th>
+    </tr>
+    <tr>
+            <td>
+                <ol>
+                        <li><a href="http://stackoverflow.com/" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                        <li><a href="http://serverfault.com/" title="system and network administrators">Server Fault</a></li>
+                        <li><a href="http://superuser.com/" title="computer enthusiasts and power users">Super User</a></li>
+                        <li><a href="http://webapps.stackexchange.com/" title="power users of web applications">Web Applications</a></li>
+                        <li><a href="http://askubuntu.com/" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                        <li><a href="http://webmasters.stackexchange.com/" title="pro webmasters">Webmasters</a></li>
+                        <li><a href="http://gamedev.stackexchange.com/" title="professional and independent game developers">Game Development</a></li>
+                        <li><a href="http://tex.stackexchange.com/" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://programmers.stackexchange.com/" title="professional programmers interested in conceptual questions about software development">Programmers</a></li>
+                        <li><a href="http://unix.stackexchange.com/" title="users of Linux, FreeBSD and other Un*x-like operating systems">Unix &amp; Linux</a></li>
+                        <li><a href="http://apple.stackexchange.com/" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                        <li><a href="http://wordpress.stackexchange.com/" title="WordPress developers and administrators">WordPress Development</a></li>
+                        <li><a href="http://gis.stackexchange.com/" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                        <li><a href="http://electronics.stackexchange.com/" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                        <li><a href="http://android.stackexchange.com/" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                        <li><a href="http://security.stackexchange.com/" title="information security professionals">Information Security</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://dba.stackexchange.com/" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                        <li><a href="http://drupal.stackexchange.com/" title="Drupal developers and administrators">Drupal Answers</a></li>
+                        <li><a href="http://sharepoint.stackexchange.com/" title="SharePoint enthusiasts">SharePoint</a></li>
+                        <li><a href="http://ux.stackexchange.com/" title="user experience researchers and experts">User Experience</a></li>
+                        <li><a href="http://mathematica.stackexchange.com/" title="users of Mathematica">Mathematica</a></li>
+                        <li><a href="http://salesforce.stackexchange.com/" title="Salesforce administrators, implementation experts, developers and anybody in-between">Salesforce</a></li>
+                        <li><a href="http://expressionengine.stackexchange.com/" title="administrators, end users, developers and designers for ExpressionEngine® CMS">ExpressionEngine® Answers</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#technology" class="more">
+                                more (13)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://photo.stackexchange.com/" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                        <li><a href="http://scifi.stackexchange.com/" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                        <li><a href="http://graphicdesign.stackexchange.com/" title="Graphic Design professionals, students, and enthusiasts">Graphic Design</a></li>
+                        <li><a href="http://movies.stackexchange.com/" title="movie and tv enthusiasts">Movies &amp; TV</a></li>
+                        <li><a href="http://cooking.stackexchange.com/" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                        <li><a href="http://diy.stackexchange.com/" title="contractors and serious DIYers">Home Improvement</a></li>
+                        <li><a href="http://money.stackexchange.com/" title="people who want to be financially literate">Personal Finance &amp; Money</a></li>
+                        <li><a href="http://academia.stackexchange.com/" title="academics and those enrolled in higher education">Academia</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#lifearts" class="more">
+                                more (9)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://english.stackexchange.com/" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                        <li><a href="http://skeptics.stackexchange.com/" title="scientific skepticism">Skeptics</a></li>
+                        <li><a href="http://judaism.stackexchange.com/" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                        <li><a href="http://travel.stackexchange.com/" title="road warriors and seasoned travelers">Travel</a></li>
+                        <li><a href="http://christianity.stackexchange.com/" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                        <li><a href="http://gaming.stackexchange.com/" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                        <li><a href="http://bicycles.stackexchange.com/" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                        <li><a href="http://rpg.stackexchange.com/" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#culturerecreation" class="more">
+                                more (21)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://math.stackexchange.com/" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                        <li><a href="http://stats.stackexchange.com/" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization">Cross Validated (stats)</a></li>
+                        <li><a href="http://cstheory.stackexchange.com/" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                        <li><a href="http://physics.stackexchange.com/" title="active researchers, academics and students of physics">Physics</a></li>
+                        <li><a href="http://mathoverflow.net/" title="professional mathematicians">MathOverflow</a></li>
+                        <li><a href="http://chemistry.stackexchange.com/" title="scientists, academics, teachers and students">Chemistry</a></li>
+                        <li><a href="http://biology.stackexchange.com/" title="biology researchers, academics, and students">Biology</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#science" class="more">
+                                more (5)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://stackapps.com/" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                        <li><a href="http://meta.stackexchange.com/" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Exchange</a></li>
+                        <li><a href="http://area51.stackexchange.com/" title="proposing new sites in the Stack Exchange network">Area 51</a></li>
+                        <li><a href="http://careers.stackoverflow.com/">Stack Overflow Careers</a></li>
+                    
+                </ol>
+            </td>
+    </tr>
+</tbody></table>
+                </div>
+            </div>
+
+            <div id="copyright">
+                site design / logo © 2016 Stack Exchange Inc; user contributions licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc by-sa 3.0</a> 
+                with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+            <div id="svnrev">
+                rev 2016.1.22.3206
+            </div>
+            
+        </div>
+    </div>
+    <noscript>
+        <div id="noscript-warning">Stack Overflow works best with JavaScript enabled<img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"></div>
+    </noscript>
+<script>var p = "http", d = "static"; if (document.location.protocol == "https:") { p += "s"; d = "engine"; } var z = document.createElement("script"); z.type = "text/javascript"; z.async = true; z.src = p + "://" + d + ".adzerk.net/ados.js"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);</script>
+<script>
+    var ados = ados || {};
+    ados.run = ados.run || [];
+    ados.run.push(function () {
+        ados_setKeywords('android,shadow,x-user-registered');; ados_load();
+    });         
+</script>
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-5620270-1', {'userId': '6544578' });
+                ga('set', 'dimension1', '6544578');                 ga('set', 'dimension2', '|android|shadow|');         ga('send', 'pageview');
+        var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+        (function () {
+            var ssl='https:'==document.location.protocol,
+                s=document.getElementsByTagName('script')[0],
+                qc=document.createElement('script');
+            qc.async=true;
+            qc.src=(ssl?'https://secure':'http://edge')+'.quantserve.com/quant.js';
+            s.parentNode.insertBefore(qc, s);
+            var sc=document.createElement('script');
+            sc.async=true;
+            sc.src=(ssl?'https://sb':'http://b') + '.scorecardresearch.com/beacon.js';
+            s.parentNode.insertBefore(sc, s);
+        })();
+        _comscore.push({ c1: "2", c2: "17440561" });
+        _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+    </script>
+            
+    
+<script src="android%20-%20How%20to%20provide%20shadow%20to%20Button%20-%20Stack%20Overflow_files/p.js" async=""></script></body></html>

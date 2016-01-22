@@ -2,7 +2,6 @@ package com.example.sdn.finova;
 
 import android.app.PendingIntent;
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -10,18 +9,17 @@ import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
-import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonParser;
-import com.google.gson.reflect.TypeToken;
 
-import java.io.IOException;
-import java.lang.reflect.Type;
 import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 public class TracksActivity extends AppCompatActivity {
 
@@ -39,8 +37,7 @@ public class TracksActivity extends AppCompatActivity {
     private ArrayList<TrackJSON> tracks = new ArrayList<>();
     private TrackJSON[] tracksArray;
 
-    Button buttonTest;
-    ImageView imageViewTest;
+    ListView listViewTracks;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,8 +46,8 @@ public class TracksActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        buttonTest = (Button)findViewById(R.id.buttonTest);
-        imageViewTest = (ImageView)findViewById(R.id.imageViewTest);
+        listViewTracks = (ListView)findViewById(R.id.listViewTracks);
+
 
         loadTracksData();
         loadTracksData();
@@ -118,8 +115,7 @@ public class TracksActivity extends AppCompatActivity {
                 Gson gson = new Gson();
 
 //                Type type = new TypeToken<ArrayList<TrackJSON>>(){}.getType();
-//                Type type = tracks.getClass();
-//                tracks.addAll(gson.fromJson(tracksString, tracks.getClass()));
+//                tracks.addAll(gson.fromJson(tracksString, type));
 
                 JsonParser parser = new JsonParser();
                 JsonArray array = parser.parse(tracksString).getAsJsonArray();
@@ -138,70 +134,56 @@ public class TracksActivity extends AppCompatActivity {
     }
 
     public void fillViews(){
-
+/*
         Log.d(LOG_TAG, "size = " + tracks.size());
+        for (int i = 0; i < tracks.size(); i++) {
+            Log.d(LOG_TAG, "track = " + tracks.get(i).getId());
+        }
+*/
+
+        ArrayList<Map<String, Object>> listData = new ArrayList<Map<String, Object>>(
+                tracks.size());
+
+        Map<String, Object> m;
 
         for (int i = 0; i < tracks.size(); i++) {
+            m = new HashMap<String, Object>();
+            m.put(R.id.textViewDistance + "", tracks.get(i).getLength());
+            m.put(R.id.textViewDuration +"", tracks.get(i).getTime_track());
+            m.put(R.id.textViewFrom + "", tracks.get(i).getAddressStart());
+            m.put(R.id.textViewTimeFrom + "", tracks.get(i).getTime_track_start());
+            m.put(R.id.textViewTimeTo + "", tracks.get(i).getTime_track_stop());
+            m.put(R.id.textViewTo + "", tracks.get(i).getAddressEnd());
 
-            Log.d(LOG_TAG, "track = " + tracks.get(i).getId());
-
+            listData.add(m);
         }
+
+        String[] from = {R.id.textViewDistance + "", R.id.textViewDuration +"",
+                R.id.textViewFrom + "", R.id.textViewTimeFrom + "", R.id.textViewTimeTo + "",
+                R.id.textViewTo + ""};
+
+        int[] to = {R.id.textViewDistance, R.id.textViewDuration,
+                R.id.textViewFrom, R.id.textViewTimeFrom, R.id.textViewTimeTo,
+                R.id.textViewTo};
+
+        SimpleAdapter simpleAdapter = new SimpleAdapter(this, listData, R.layout.track_list_item,
+                from, to);
+
+        listViewTracks.setAdapter(simpleAdapter);
+
+    }
+
+    public void onDummyButtonClick(View v){
+
+        Toast.makeText(getBaseContext(), "Coming soon!", Toast.LENGTH_SHORT).show();
 
     }
 
 
-    public void onButtonTestClick(View v) throws IOException {
 
-        class GetDataTask extends AsyncTask<Void, Void, Void> {
-
-            @Override
-            protected Void doInBackground(Void... params) {
-                try {
-                    temp();
-                }catch (IOException e){
-                    Log.d(LOG_TAG, e.getMessage());
-                }
-
-                return null;
-            }
-
-
-
-            protected void temp() throws IOException{
-
-                FinovaModel finovaModel = new FinovaModel(SERVER_URI, ACCESS_TOKEN,
-                        TRACKS_PER_REQUEST_CLIENT, TRACKS_PER_PAGE_SERVER);
-
-                ArrayList<TrackJSON> tracks = new ArrayList<>();
-
-                tracks = finovaModel.getTracksOnRequest(2);
-
-                Log.d(LOG_TAG, "size = " + tracks.size());
-
-                for (int i = 0; i < tracks.size(); i++) {
-
-                    Log.d(LOG_TAG, "track = " + tracks.get(i).getId());
-
-                }
-
-
-
-//                Picasso.with(getBaseContext()).load(tracks[1].getImg()).into(imageViewTest);
-
-
-            }
-
-        }
-
-        new GetDataTask().execute();
 /*
         Picasso.with(getBaseContext())
                 .load("https://newevolutiondesigns.com/images/freebies/space-wallpaper-29.jpg").into(imageViewTest);
 */
-
-
-
-    }
-
 
 }

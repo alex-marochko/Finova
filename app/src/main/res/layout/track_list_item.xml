@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewDateDivider"
+        android:text="Сегодня, 24 января"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:background="#eeeeee"
+        android:visibility="visible"
+        />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageViewMap"
+        android:src="@drawable/map_example"
+        android:layout_below="@id/textViewDateDivider"
+
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="0dp"
+        android:paddingBottom="0dp"
+
+        android:layout_marginTop="-34dp"
+        android:layout_centerHorizontal="true"
+        />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageViewArrowButton"
+        android:src="@drawable/arrow_button"
+        android:layout_alignEnd="@id/textViewDateDivider"
+        android:layout_alignRight="@id/textViewDateDivider"
+        android:layout_below="@id/textViewDateDivider"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="30dp"
+        android:background="@null"
+        android:onClick="onDummyButtonClick"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewTimeFrom"
+        android:layout_below="@id/imageViewMap"
+        android:text="18:30"
+        android:layout_marginLeft="40dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="10dp"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:id="@+id/imageViewMapPin1"
+        android:src="@drawable/map_pin1_2"
+        android:layout_toEndOf="@id/textViewTimeFrom"
+        android:layout_toRightOf="@id/textViewTimeFrom"
+        android:layout_below="@id/imageViewMap"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginStart="10dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewFrom"
+        android:layout_toEndOf="@id/textViewTimeFrom"
+        android:layout_toRightOf="@id/textViewTimeFrom"
+        android:layout_below="@id/imageViewMap"
+        android:layout_marginLeft="80dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="10dp"
+        android:layout_alignLeft="@id/textViewTimeFrom"
+        android:layout_alignStart="@id/textViewTimeFrom"
+        android:text="Обухов,\nКиевская область"
+        android:textSize="16sp"
+        android:singleLine="false"
+
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewDistance"
+        android:layout_below="@id/imageViewMap"
+        android:layout_marginRight="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+
+
+        android:text="32.0 км"
+        android:textSize="20sp"
+        android:singleLine="false"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewDuration"
+        android:layout_below="@id/textViewDistance"
+        android:text="1 ч 0 мин"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="40dp"
+        android:layout_marginEnd="40dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewTimeTo"
+        android:layout_below="@id/imageViewMap"
+        android:text="19:30"
+        android:layout_marginLeft="40dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="70dp"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:id="@+id/imageViewMapPin2"
+        android:src="@drawable/map_pin2"
+        android:layout_toEndOf="@id/textViewTimeTo"
+        android:layout_toRightOf="@id/textViewTimeTo"
+        android:layout_below="@id/imageViewMap"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="66dp"
+        android:layout_marginStart="10dp"
+        />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewTo"
+        android:layout_toEndOf="@id/textViewTimeFrom"
+        android:layout_toRightOf="@id/textViewTimeFrom"
+        android:layout_below="@id/imageViewMap"
+        android:layout_marginLeft="80dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="70dp"
+        android:layout_alignLeft="@id/textViewTimeFrom"
+        android:layout_alignStart="@id/textViewTimeFrom"
+        android:text="Обухов,Киевская область"
+        android:textSize="16sp"
+        android:singleLine="false"
+
+        />
+
+</RelativeLayout>
