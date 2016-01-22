@@ -101,6 +101,8 @@ public class FinovaModel {
 
     public ArrayList<TrackJSON> getCertainTracks(int trackFrom, int trackTo){
 
+//        The point is to have opportunity to select certain TRACKS, not pages.
+
         ArrayList<TrackJSON> tracks = new ArrayList<>();
 
         int pageFrom;
@@ -135,7 +137,21 @@ public class FinovaModel {
 
         }while(tracks.size()<(trackTo-trackFrom+1));
 
+
         return tracks;
+    }
+
+    public ArrayList<TrackJSON> getTracksOnRequest(int requestIndex){
+//        we will manipulate with requests, it's easier
+
+        Log.d(LOG_TAG, "tracksPerRequest = " + tracksPerRequest);
+        Log.d(LOG_TAG, "requestIndex = " + requestIndex);
+
+        Log.d(LOG_TAG, "from = " + (1 + tracksPerRequest*(requestIndex - 1)));
+        Log.d(LOG_TAG, "to = " + requestIndex*tracksPerRequest);
+
+        return getCertainTracks(1 + tracksPerRequest*(requestIndex - 1), requestIndex*tracksPerRequest);
+
     }
 
 }
