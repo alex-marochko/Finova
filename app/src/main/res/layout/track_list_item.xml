@@ -20,7 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/imageViewMap"
-        android:src="@drawable/map_example"
+        android:src="@drawable/map_dummy"
         android:layout_below="@id/textViewDateDivider"
 
         android:paddingLeft="20dp"
@@ -28,7 +28,7 @@
         android:paddingTop="0dp"
         android:paddingBottom="0dp"
 
-        android:layout_marginTop="-34dp"
+        android:layout_marginTop="0dp"
         android:layout_centerHorizontal="true"
         />
 

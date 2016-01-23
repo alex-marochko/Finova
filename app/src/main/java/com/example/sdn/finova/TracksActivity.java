@@ -1,24 +1,36 @@
 package com.example.sdn.finova;
 
 import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
+import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonParser;
+import com.squareup.picasso.Picasso;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 public class TracksActivity extends AppCompatActivity {
@@ -28,14 +40,13 @@ public class TracksActivity extends AppCompatActivity {
     static final String ACCESS_TOKEN = "63Rqp1-c72sYPuLao3BYpLRv-358SHer";
     static final String SERVER_URI = "http://api.connect.finova.ua/app/";
     static final int TRACKS_PER_PAGE_SERVER = 2;
-    static final int TRACKS_PER_REQUEST_CLIENT = 5;
+    static final int TRACKS_PER_REQUEST_CLIENT = 10;
 
     static final int REQUEST_PARAM_TRACKS = 1;
 
     private int requestId = 1;
 
     private ArrayList<TrackJSON> tracks = new ArrayList<>();
-    private TrackJSON[] tracksArray;
 
     ListView listViewTracks;
 
@@ -49,7 +60,6 @@ public class TracksActivity extends AppCompatActivity {
         listViewTracks = (ListView)findViewById(R.id.listViewTracks);
 
 
-        loadTracksData();
         loadTracksData();
 
     }
@@ -145,6 +155,8 @@ public class TracksActivity extends AppCompatActivity {
                 tracks.size());
 
         Map<String, Object> m;
+        Calendar calendar = Calendar.getInstance();
+        Calendar calendar2 = Calendar.getInstance();
 
         for (int i = 0; i < tracks.size(); i++) {
             m = new HashMap<String, Object>();
@@ -154,22 +166,89 @@ public class TracksActivity extends AppCompatActivity {
             m.put(R.id.textViewTimeFrom + "", tracks.get(i).getTime_track_start());
             m.put(R.id.textViewTimeTo + "", tracks.get(i).getTime_track_stop());
             m.put(R.id.textViewTo + "", tracks.get(i).getAddressEnd());
+            m.put(R.id.imageViewMap + "", R.drawable.map_dummy);
+            m.put(R.id.textViewDateDivider + "", tracks.get(i).getTime_track_start());
 
-            listData.add(m);
+//            we should have visible date divider
+//            only when it's first in list, or when date changes:
+
+            calendar2.setTimeInMillis(tracks.get(i).getTime_track_start() * 1000);
+
+            if(i>0) { //not first in list
+                calendar.setTimeInMillis(tracks.get(i - 1).getTime_track_start() * 1000);
+
+
+                if (calendar.get(Calendar.DAY_OF_YEAR) == calendar2.get(Calendar.DAY_OF_YEAR)) //day's not changed
+                    m.put(R.id.textViewDateDivider + "", "");
+                    else m.put(R.id.textViewDateDivider + "", getDateFormatted(calendar2));
+//                        calendar2.getDisplayName(Calendar.DATE, Calendar.SHORT, getResources().getConfiguration().locale));
+            }else m.put(R.id.textViewDateDivider + "", getDateFormatted(calendar2));
+
+
+                    listData.add(m);
         }
 
         String[] from = {R.id.textViewDistance + "", R.id.textViewDuration +"",
                 R.id.textViewFrom + "", R.id.textViewTimeFrom + "", R.id.textViewTimeTo + "",
-                R.id.textViewTo + ""};
+                R.id.textViewTo + "", R.id.imageViewMap + ""};
 
         int[] to = {R.id.textViewDistance, R.id.textViewDuration,
                 R.id.textViewFrom, R.id.textViewTimeFrom, R.id.textViewTimeTo,
-                R.id.textViewTo};
+                R.id.textViewTo, R.id.imageViewMap};
 
-        SimpleAdapter simpleAdapter = new SimpleAdapter(this, listData, R.layout.track_list_item,
+        FinovaSimpleAdapter simpleAdapter = new FinovaSimpleAdapter(this, listData, R.layout.track_list_item,
                 from, to);
 
         listViewTracks.setAdapter(simpleAdapter);
+
+
+
+        findViewById(R.id.loadingPanel).setVisibility(View.GONE);
+        listViewTracks.setVisibility(View.VISIBLE);
+
+    }
+
+    public String getDateFormatted(Calendar calendar){
+
+        Date date = calendar.getTime();  //calendar.getTime();
+
+        SimpleDateFormat formatter = new SimpleDateFormat("dd MMMM", Locale.getDefault());
+
+        String result;
+
+        formatter.setCalendar(calendar);
+
+        result = formatter.format(calendar.getTime());
+
+        Calendar currentDate = Calendar.getInstance();
+
+        if(calendar.get(Calendar.YEAR)!=currentDate.get(Calendar.YEAR)){
+
+            result = result + " " + calendar.get(Calendar.YEAR);
+        }
+
+
+        //checking difference between date and current date:
+        currentDate.setTimeInMillis(currentDate.getTime().getTime() - calendar.getTime().getTime());
+//        currentDate.add(Calendar.MILLISECOND, -calendar.get(Calendar.MILLISECOND));
+
+        Log.d(LOG_TAG, "date.toString(): " + currentDate.getTime().toString() );
+
+
+
+
+        if(currentDate.get(Calendar.YEAR)==1970){
+            switch (currentDate.get(Calendar.DAY_OF_YEAR)){
+
+                case 1:
+                    result = "Сегодня, " + result;
+                    break;
+                case 2:
+                    result = "Вчера, " + result;
+            }
+        }
+
+        return result;
 
     }
 
@@ -180,10 +259,83 @@ public class TracksActivity extends AppCompatActivity {
     }
 
 
+    private class FinovaSimpleAdapter extends SimpleAdapter{
+        private Context context;
+        private LayoutInflater inflater;
+        private List<? extends Map<String, ?>> data;
+        int[] to;
+        String[] from;
+
+
+        public FinovaSimpleAdapter(Context context, List<? extends Map<String, ?>> data, int resource, String[] from, int[] to) {
+            super(context, data, resource, from, to);
+
+            this.context = context;
+            inflater = LayoutInflater.from(context);
+            this.data = data;
+            this.to = to;
+            this.from = from;
+        }
 
 /*
-        Picasso.with(getBaseContext())
-                .load("https://newevolutiondesigns.com/images/freebies/space-wallpaper-29.jpg").into(imageViewTest);
+        @Override
+        public void setViewImage(ImageView v, int value){
+
+//            Log.d(LOG_TAG, "setViewImage, value = " + value);
+
+//            Log.d(LOG_TAG, " CLASSS = " + v.getParent().getClass().toString());
+
+            Picasso
+                    .with(getBaseContext())
+                    .load("http://media.tumblr.com/1a82d8359973115a13349f0b5bd3eb90/tumblr_inline_mw9bpi2oeI1rw02zn.png")//tracks.get(value).getImg())
+                    .into(v);
+
+            super.setViewImage(v, value);
+        }
 */
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            if (null == convertView) {
+                convertView = inflater.inflate(R.layout.track_list_item, parent, false);
+            }
+
+            if(tracks.get(position).getImg().length()>0) {
+                Picasso
+                        .with(context)
+                        .load(tracks.get(position).getImg())
+//                        .fit() // will explain later
+                        .into((ImageView) convertView.findViewById(R.id.imageViewMap));
+            }
+
+//          hiding textViewDateDivider when it's not first and date is not changing
+
+            if(data.get(position).get(R.id.textViewDateDivider+"").toString().equals(""))
+                (convertView.findViewById(R.id.textViewDateDivider))
+                        .setVisibility(View.GONE);
+            else ((TextView)convertView.findViewById(R.id.textViewDateDivider))
+                    .setText(data.get(position).get(R.id.textViewDateDivider+"").toString());
+
+
+//            Log.d(LOG_TAG, "getView, position = " + position);
+            return convertView;
+        }
+
+/*
+        @Override
+        public void setViewText(TextView v, String text) {
+
+            super.setViewText(v, text);
+
+            Log.d(LOG_TAG, "setViewText");
+
+            if (v.getId() == R.id.textViewDateDivider) {
+
+            }
+        }
+*/
+
+    }
+
 
 }

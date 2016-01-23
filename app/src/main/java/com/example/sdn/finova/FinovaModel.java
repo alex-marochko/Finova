@@ -18,6 +18,7 @@ import java.util.ArrayList;
  * TODO: server returns incorrect JSON format for pages with number >1 (see replaceAll with RegEx)
  * TODO: server doesn't give an empty array (or other sign) when there's no more tracks
  * TODO: check all methods to work properly when there's no tracks at all, or just 1 or 2
+ * TODO: checking server response code
  *
  */
 
