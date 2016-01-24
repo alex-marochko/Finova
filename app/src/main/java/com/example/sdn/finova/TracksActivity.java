@@ -42,7 +42,7 @@ public class TracksActivity extends AppCompatActivity {
     static final String ACCESS_TOKEN = "63Rqp1-c72sYPuLao3BYpLRv-358SHer";
     static final String SERVER_URI = "http://api.connect.finova.ua/app/";
     static final int TRACKS_PER_PAGE_SERVER = 2;
-    static final int TRACKS_PER_REQUEST_CLIENT = 20;
+    static final int TRACKS_PER_REQUEST_CLIENT = 5;
 
     static final int REQUEST_PARAM_TRACKS = 1;
 
@@ -171,13 +171,11 @@ public class TracksActivity extends AppCompatActivity {
             m.put(R.id.textViewTimeFrom + "", getTimeFormatted(tracks.get(i).getTime_track_start(), "hh:mm"));
             m.put(R.id.textViewTimeTo + "", getTimeFormatted(tracks.get(i).getTime_track_stop(), "hh:mm"));
             m.put(R.id.textViewTo + "", tracks.get(i).getAddressEnd());
-            m.put(R.id.imageViewMap + "", R.drawable.map_dummy);
+            m.put(R.id.imageViewMap + "", tracks.get(i).getImg());
 //            m.put(R.id.textViewDateDivider + "", tracks.get(i).getTime_track_start());
 
 //            we should have visible date divider
 //            only when it's first in list, or when date changes:
-
-//            TODO: check algorithm, there's something wrong with dates
 
             calendar2.setTimeInMillis(tracks.get(i).getTime_track_start() * 1000);
 
@@ -191,20 +189,29 @@ public class TracksActivity extends AppCompatActivity {
 //                        calendar2.getDisplayName(Calendar.DATE, Calendar.SHORT, getResources().getConfiguration().locale));
             }else m.put(R.id.textViewDateDivider + "", getDateFormatted(calendar2));
 
+            Log.d(LOG_TAG, "textViewDateDivider " +  m.get(R.id.textViewDateDivider + ""));
+
 
                     listData.add(m);
         }
 
         String[] from = {R.id.textViewDistance + "", R.id.textViewDuration +"",
                 R.id.textViewFrom + "", R.id.textViewTimeFrom + "", R.id.textViewTimeTo + "",
-                R.id.textViewTo + "", R.id.imageViewMap + ""};
+                R.id.textViewTo + "", R.id.imageViewMap + "", R.id.textViewDateDivider + ""};
 
         int[] to = {R.id.textViewDistance, R.id.textViewDuration,
                 R.id.textViewFrom, R.id.textViewTimeFrom, R.id.textViewTimeTo,
-                R.id.textViewTo, R.id.imageViewMap};
+                R.id.textViewTo, R.id.imageViewMap, R.id.textViewDateDivider};
 
+/*
         FinovaSimpleAdapter simpleAdapter = new FinovaSimpleAdapter(this, listData, R.layout.track_list_item,
                 from, to);
+*/
+
+        SimpleAdapter simpleAdapter = new SimpleAdapter(this, listData, R.layout.track_list_item,
+                from, to);
+
+        simpleAdapter.setViewBinder(new FinovaViewBinder());
 
         listViewTracks.setAdapter(simpleAdapter);
 
@@ -420,6 +427,51 @@ public class TracksActivity extends AppCompatActivity {
             }
         }
 */
+
+    }
+
+    class FinovaViewBinder implements SimpleAdapter.ViewBinder{
+
+        @Override
+        public boolean setViewValue(View convertView, Object data,
+                                    String textRepresentation) {
+
+            switch (convertView.getId()){
+
+                case R.id.imageViewMap:
+                    if(data.toString().length()>2) {
+                        Picasso
+                                .with(getBaseContext())
+                                .setIndicatorsEnabled(true);
+                        Picasso.with(getBaseContext())
+                                .load(data.toString())
+
+//                                .resize(1000, 800)
+
+//                                .centerInside()
+//                        .resize(500, 400)
+//                        .fit()
+//                        .noFade()
+                                .error(R.drawable.map_error)
+                                .placeholder(R.drawable.map_loading)
+//                                .priority(picassoLoadingPriority(position))
+                                .into((ImageView) convertView);
+                    } else ((ImageView) convertView).setImageResource(R.drawable.map_dummy);
+                    return true;
+                case R.id.textViewDateDivider:
+                    //          hiding textViewDateDivider when it's not first and date is not changing
+
+                    ((TextView)convertView).setText(data.toString());
+                    if(data.toString().equals(""))
+                        ((TextView)convertView).setVisibility(View.GONE);
+                    else ((TextView)convertView).setVisibility(View.VISIBLE);
+                    return true;
+
+            }
+
+            return false;
+
+        }
 
     }
 
