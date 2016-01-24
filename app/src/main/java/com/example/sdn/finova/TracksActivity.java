@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.format.DateUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,7 +24,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonParser;
 import com.squareup.picasso.Picasso;
 
-import java.text.DateFormat;
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -32,6 +33,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.TimeZone;
 
 public class TracksActivity extends AppCompatActivity {
 
@@ -160,11 +162,14 @@ public class TracksActivity extends AppCompatActivity {
 
         for (int i = 0; i < tracks.size(); i++) {
             m = new HashMap<String, Object>();
-            m.put(R.id.textViewDistance + "", tracks.get(i).getLength());
-            m.put(R.id.textViewDuration +"", tracks.get(i).getTime_track());
+            m.put(R.id.textViewDistance + "", tracks.get(i).getLength() + ".0 км");
+
+            String s = "";
+            if(tracks.get(i).getTime_track()>=3600) s = getTimeFormatted(tracks.get(i).getTime_track(), "H ч ");
+            m.put(R.id.textViewDuration +"", s + getTimeFormatted(tracks.get(i).getTime_track(), "m мин"));
             m.put(R.id.textViewFrom + "", tracks.get(i).getAddressStart());
-            m.put(R.id.textViewTimeFrom + "", tracks.get(i).getTime_track_start());
-            m.put(R.id.textViewTimeTo + "", tracks.get(i).getTime_track_stop());
+            m.put(R.id.textViewTimeFrom + "", getTimeFormatted(tracks.get(i).getTime_track_start(), "hh:mm"));
+            m.put(R.id.textViewTimeTo + "", getTimeFormatted(tracks.get(i).getTime_track_stop(), "hh:mm"));
             m.put(R.id.textViewTo + "", tracks.get(i).getAddressEnd());
             m.put(R.id.imageViewMap + "", R.drawable.map_dummy);
             m.put(R.id.textViewDateDivider + "", tracks.get(i).getTime_track_start());
@@ -206,6 +211,28 @@ public class TracksActivity extends AppCompatActivity {
         findViewById(R.id.loadingPanel).setVisibility(View.GONE);
         listViewTracks.setVisibility(View.VISIBLE);
 
+    }
+
+    public String getTimeFormatted(long seconds, String pattern){
+
+        if(seconds > 0) {
+
+//            incredible, but without this line all local datetime conversations
+//            are considering timezone difference automatically:
+            TimeZone.setDefault(TimeZone.getTimeZone("GMT"));
+
+            Date date = new Date(seconds*1000);
+
+
+            Log.d(LOG_TAG, "seconds = " + seconds + " date = " + date.toString());
+
+            SimpleDateFormat formatter = new SimpleDateFormat(pattern, Locale.getDefault());
+
+
+//            Log.d(LOG_TAG, "after formatting ("+  Locale.UK.toString() + ") " + formatter.format(date));
+
+            return formatter.format(date);
+        } else return "";
     }
 
     public String getDateFormatted(Calendar calendar){
@@ -300,13 +327,26 @@ public class TracksActivity extends AppCompatActivity {
                 convertView = inflater.inflate(R.layout.track_list_item, parent, false);
             }
 
+//           ----------====== PICASSO =======-----------------------
+
             if(tracks.get(position).getImg().length()>0) {
                 Picasso
                         .with(context)
                         .load(tracks.get(position).getImg())
+//                        .resize(500, 400)
 //                        .fit() // will explain later
                         .into((ImageView) convertView.findViewById(R.id.imageViewMap));
             }
+
+//           ----------====== GLIDE =======-----------------------
+/*
+            Glide.with(context)
+                    .load(tracks.get(position).getImg())
+//                    .centerCrop()
+//                    .placeholder(R.drawable.loading_spinner)
+                    .crossFade()
+                    .into((ImageView) convertView.findViewById(R.id.imageViewMap));
+*/
 
 //          hiding textViewDateDivider when it's not first and date is not changing
 
@@ -315,6 +355,33 @@ public class TracksActivity extends AppCompatActivity {
                         .setVisibility(View.GONE);
             else ((TextView)convertView.findViewById(R.id.textViewDateDivider))
                     .setText(data.get(position).get(R.id.textViewDateDivider+"").toString());
+
+//          filling time textViews
+
+            ((TextView)convertView.findViewById(R.id.textViewTimeFrom))
+                    .setText(data.get(position).get(R.id.textViewTimeFrom+"").toString());
+
+            ((TextView)convertView.findViewById(R.id.textViewTimeTo))
+                    .setText(data.get(position).get(R.id.textViewTimeTo+"").toString());
+
+//          filling route points textViews
+
+            ((TextView)convertView.findViewById(R.id.textViewFrom))
+                    .setText(data.get(position).get(R.id.textViewFrom+"").toString());
+
+            ((TextView)convertView.findViewById(R.id.textViewTo))
+                    .setText(data.get(position).get(R.id.textViewTo+"").toString());
+
+//            textViewDistance
+
+            ((TextView)convertView.findViewById(R.id.textViewDistance))
+                    .setText(data.get(position).get(R.id.textViewDistance+"").toString());
+
+//            textViewDuration
+
+            ((TextView)convertView.findViewById(R.id.textViewDuration))
+                    .setText(data.get(position).get(R.id.textViewDuration+"").toString());
+
 
 
 //            Log.d(LOG_TAG, "getView, position = " + position);
