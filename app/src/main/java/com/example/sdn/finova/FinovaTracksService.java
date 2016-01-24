@@ -26,6 +26,8 @@ public class FinovaTracksService extends IntentService{
 
 
 
+
+
     public FinovaTracksService() {
         super(SERVICE_NAME);
     }
@@ -39,6 +41,7 @@ public class FinovaTracksService extends IntentService{
         int requestId = intent.getIntExtra("requestId", 1);
         int perPage = intent.getIntExtra("perPage", 2);
         int tracksPerRequest = intent.getIntExtra("tracksPerRequest", 5);
+        int gettingDataMode = intent.getIntExtra("gettingDataMode", 1);
         String accessToken = intent.getStringExtra("accessToken");
         String serverUri = intent.getStringExtra("serverUri");
 
@@ -55,7 +58,8 @@ public class FinovaTracksService extends IntentService{
         String json = gson.toJson(tracks);
 
         Intent tracksDataIntent = new Intent().putExtra("tracks", json)
-                .putExtra("tracksCount", tracks.size());
+                .putExtra("tracksCount", tracks.size())
+                .putExtra("gettingDataMode", gettingDataMode);
 
         try {
             pendingIntent.send(FinovaTracksService.this, TracksActivity.REQUEST_PARAM_TRACKS, tracksDataIntent);

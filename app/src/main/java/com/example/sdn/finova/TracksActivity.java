@@ -25,9 +25,12 @@ import android.widget.TextView;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonParser;
+import com.orangegangsters.github.swipyrefreshlayout.library.SwipyRefreshLayout;
+import com.orangegangsters.github.swipyrefreshlayout.library.SwipyRefreshLayoutDirection;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
 
+import android.support.library21.custom.SwipeRefreshLayoutBottom;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -51,11 +54,15 @@ public class TracksActivity extends AppCompatActivity {
 
     static final int REQUEST_PARAM_TRACKS = 1;
 
+    static final int DATA_REFRESH = 1;
+    static final int DATA_ADD = 2;
+
     private int requestId = 1;
 
     private ArrayList<TrackJSON> tracks = new ArrayList<>();
 
     ListView listViewTracks;
+    SwipyRefreshLayout swipyRefreshLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,11 +72,25 @@ public class TracksActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         listViewTracks = (ListView)findViewById(R.id.listViewTracks);
+        swipyRefreshLayout = (SwipyRefreshLayout)findViewById(R.id.swipyRefreshLayout);
 
 
-        loadTracksData();
+        loadTracksData(DATA_REFRESH);
+
+        swipyRefreshLayout.setOnRefreshListener(new SwipyRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh(SwipyRefreshLayoutDirection direction) {
+
+                if(direction == SwipyRefreshLayoutDirection.TOP){
+
+                    loadTracksData(DATA_REFRESH);
+
+                } else swipyRefreshLayout.setRefreshing(false);
+            }
+        });
 
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -93,9 +114,18 @@ public class TracksActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private void loadTracksData(){
+
+
+    private void loadTracksData(int gettingDataMode){
 
         Log.d(LOG_TAG, "loadTracksData() start");
+
+        swipyRefreshLayout.setRefreshing(true);
+        swipyRefreshLayout.setEnabled(false);
+
+        if(gettingDataMode == DATA_REFRESH) requestId = 1;
+        if(gettingDataMode == DATA_ADD) requestId++;
+
 
         Intent dummyIntent = new Intent();
 
@@ -108,12 +138,11 @@ public class TracksActivity extends AppCompatActivity {
                 .putExtra("serverUri", SERVER_URI)
                 .putExtra("tracksPerRequest", TRACKS_PER_REQUEST_CLIENT)
                 .putExtra("perPage", TRACKS_PER_PAGE_SERVER)
-                .putExtra("pendingIntent", pendingIntent);
+                .putExtra("pendingIntent", pendingIntent)
+                .putExtra("gettingDataMode", gettingDataMode);
 
         startService(intent);
 
-
-        requestId++;
         Log.d(LOG_TAG, "loadTracksData() end");
     }
 
@@ -129,6 +158,7 @@ public class TracksActivity extends AppCompatActivity {
                 Log.d(LOG_TAG, "case REQUEST_PARAM_TRACKS start");
                 String tracksString = data.getStringExtra("tracks");
                 int tracksCount = data.getIntExtra("tracksCount", 5);
+                int gettingDataMode = data.getIntExtra("gettingDataMode", 1);
                 Gson gson = new Gson();
 
 //                Type type = new TypeToken<ArrayList<TrackJSON>>(){}.getType();
@@ -136,10 +166,14 @@ public class TracksActivity extends AppCompatActivity {
 
                 JsonParser parser = new JsonParser();
                 JsonArray array = parser.parse(tracksString).getAsJsonArray();
+
+                if(gettingDataMode == DATA_REFRESH) tracks.clear();
                 for(int i=0; i<tracksCount; i++ )
                     tracks.add( gson.fromJson(array.get(i), TrackJSON.class) );
 
                 fillViews();
+                swipyRefreshLayout.setRefreshing(false);
+                swipyRefreshLayout.setEnabled(true);
 //
 //  Log.d(LOG_TAG, "size = " + tracks.size());
                 Log.d(LOG_TAG, "case REQUEST_PARAM_TRACKS end");
@@ -223,7 +257,7 @@ public class TracksActivity extends AppCompatActivity {
 
 
         findViewById(R.id.loadingPanel).setVisibility(View.GONE);
-        listViewTracks.setVisibility(View.VISIBLE);
+        swipyRefreshLayout.setVisibility(View.VISIBLE);
 
     }
 
@@ -297,6 +331,7 @@ public class TracksActivity extends AppCompatActivity {
     public void onDummyButtonClick(View v){
 
         Toast.makeText(getBaseContext(), "Coming soon!", Toast.LENGTH_SHORT).show();
+        swipyRefreshLayout.setRefreshing(true);
 
     }
 

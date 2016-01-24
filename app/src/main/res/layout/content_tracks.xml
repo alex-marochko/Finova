@@ -16,7 +16,8 @@
         android:id="@+id/loadingPanel"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center" >
+        android:gravity="center"
+        >
 
         <ProgressBar
             android:layout_width="wrap_content"
@@ -24,6 +25,13 @@
             android:indeterminate="true" />
     </RelativeLayout>
 
+<com.orangegangsters.github.swipyrefreshlayout.library.SwipyRefreshLayout
+    android:id="@+id/swipyRefreshLayout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:srl_direction = "both"
+    android:visibility="gone"
+    >
 
     <ListView
         android:layout_width="match_parent"
@@ -32,7 +40,10 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:visibility="gone"
+
         />
+
+</com.orangegangsters.github.swipyrefreshlayout.library.SwipyRefreshLayout>
+
 
 </RelativeLayout>
