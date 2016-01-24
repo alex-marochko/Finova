@@ -42,7 +42,7 @@ public class TracksActivity extends AppCompatActivity {
     static final String ACCESS_TOKEN = "63Rqp1-c72sYPuLao3BYpLRv-358SHer";
     static final String SERVER_URI = "http://api.connect.finova.ua/app/";
     static final int TRACKS_PER_PAGE_SERVER = 2;
-    static final int TRACKS_PER_REQUEST_CLIENT = 10;
+    static final int TRACKS_PER_REQUEST_CLIENT = 20;
 
     static final int REQUEST_PARAM_TRACKS = 1;
 
@@ -172,10 +172,12 @@ public class TracksActivity extends AppCompatActivity {
             m.put(R.id.textViewTimeTo + "", getTimeFormatted(tracks.get(i).getTime_track_stop(), "hh:mm"));
             m.put(R.id.textViewTo + "", tracks.get(i).getAddressEnd());
             m.put(R.id.imageViewMap + "", R.drawable.map_dummy);
-            m.put(R.id.textViewDateDivider + "", tracks.get(i).getTime_track_start());
+//            m.put(R.id.textViewDateDivider + "", tracks.get(i).getTime_track_start());
 
 //            we should have visible date divider
 //            only when it's first in list, or when date changes:
+
+//            TODO: check algorithm, there's something wrong with dates
 
             calendar2.setTimeInMillis(tracks.get(i).getTime_track_start() * 1000);
 
@@ -255,8 +257,9 @@ public class TracksActivity extends AppCompatActivity {
         }
 
 
-        //checking difference between date and current date:
-        currentDate.setTimeInMillis(currentDate.getTime().getTime() - calendar.getTime().getTime());
+        //checking difference between track date and current date:
+        Calendar checkCalendar = Calendar.getInstance();
+        checkCalendar.setTimeInMillis(currentDate.getTime().getTime() - calendar.getTime().getTime());
 //        currentDate.add(Calendar.MILLISECOND, -calendar.get(Calendar.MILLISECOND));
 
         Log.d(LOG_TAG, "date.toString(): " + currentDate.getTime().toString() );
@@ -264,13 +267,13 @@ public class TracksActivity extends AppCompatActivity {
 
 
 
-        if(currentDate.get(Calendar.YEAR)==1970){
-            switch (currentDate.get(Calendar.DAY_OF_YEAR)){
+        if(checkCalendar.get(Calendar.YEAR)==1970){
+            switch (currentDate.get(Calendar.DAY_OF_YEAR)-calendar.get(Calendar.DAY_OF_YEAR)){
 
-                case 1:
+                case 0:
                     result = "Сегодня, " + result;
                     break;
-                case 2:
+                case 1:
                     result = "Вчера, " + result;
             }
         }
@@ -332,9 +335,19 @@ public class TracksActivity extends AppCompatActivity {
             if(tracks.get(position).getImg().length()>0) {
                 Picasso
                         .with(context)
+                        .setIndicatorsEnabled(true);
+                Picasso.with(context)
                         .load(tracks.get(position).getImg())
+
+                        .resize(1000, 800)
+
+                                .centerInside()
 //                        .resize(500, 400)
-//                        .fit() // will explain later
+//                        .fit()
+//                        .noFade()
+                        .error(R.drawable.map_error)
+                        .placeholder(R.drawable.map_loading)
+                        .priority(picassoLoadingPriority(position))
                         .into((ImageView) convertView.findViewById(R.id.imageViewMap));
             }
 
@@ -350,10 +363,10 @@ public class TracksActivity extends AppCompatActivity {
 
 //          hiding textViewDateDivider when it's not first and date is not changing
 
-            if(data.get(position).get(R.id.textViewDateDivider+"").toString().equals(""))
+            /*if(data.get(position).get(R.id.textViewDateDivider+"").toString().equals(""))
                 (convertView.findViewById(R.id.textViewDateDivider))
                         .setVisibility(View.GONE);
-            else ((TextView)convertView.findViewById(R.id.textViewDateDivider))
+            else */((TextView)convertView.findViewById(R.id.textViewDateDivider))
                     .setText(data.get(position).get(R.id.textViewDateDivider+"").toString());
 
 //          filling time textViews
@@ -386,6 +399,12 @@ public class TracksActivity extends AppCompatActivity {
 
 //            Log.d(LOG_TAG, "getView, position = " + position);
             return convertView;
+        }
+
+        private Picasso.Priority picassoLoadingPriority(int index){
+            if(index < data.size()/2) return Picasso.Priority.HIGH;
+            else return Picasso.Priority.LOW;
+
         }
 
 /*
