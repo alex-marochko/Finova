@@ -21,12 +21,17 @@
         android:layout_height="wrap_content"
         android:id="@+id/imageViewMap"
         android:src="@drawable/map_example"
-        android:layout_below="@id/textViewDateDivider"
+        android:layout_below="@+id/textViewDateDivider"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginTop="0dp"
+        android:layout_marginTop="20dp"
+        android:scaleType="fitStart"
 
-        />
+
+        android:adjustViewBounds="true"
+
+        android:contentDescription="карта маршрута"
+         />
 
     <ImageButton
         android:id="@+id/imageViewArrowButton"
@@ -37,7 +42,7 @@
         android:layout_alignEnd="@id/imageViewMap"
         android:layout_alignRight="@id/imageViewMap"
         android:layout_marginRight="10dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="10dp"
         android:background="@null"
         android:onClick="onDummyButtonClick"

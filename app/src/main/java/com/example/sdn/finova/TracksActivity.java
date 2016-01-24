@@ -3,6 +3,9 @@ package com.example.sdn.finova;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -23,8 +26,10 @@ import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonParser;
 import com.squareup.picasso.Picasso;
+import com.squareup.picasso.Target;
 
 
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -440,9 +445,11 @@ public class TracksActivity extends AppCompatActivity {
 
                 case R.id.imageViewMap:
                     if(data.toString().length()>2) {
+/*
                         Picasso
                                 .with(getBaseContext())
                                 .setIndicatorsEnabled(true);
+*/
                         Picasso.with(getBaseContext())
                                 .load(data.toString())
 
@@ -455,7 +462,44 @@ public class TracksActivity extends AppCompatActivity {
                                 .error(R.drawable.map_error)
                                 .placeholder(R.drawable.map_loading)
 //                                .priority(picassoLoadingPriority(position))
-                                .into((ImageView) convertView);
+                                .into((ImageView)convertView);
+
+/*
+                            class MyTarget implements Target {
+
+                                public void setView(View view) {
+                                    this.view = view;
+                                }
+
+                                public View view;
+
+
+
+                                @Override
+                                public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
+                                    Drawable drawable = new BitmapDrawable(getResources(), bitmap);
+                                    ((ImageView) view).setImageDrawable(drawable);
+
+                                }
+
+                                @Override
+                                public void onBitmapFailed(Drawable errorDrawable) {
+                                    ((ImageView) view).setImageDrawable(errorDrawable);
+                                }
+
+                                @Override
+                                public void onPrepareLoad(Drawable placeHolderDrawable) {
+                                    ((ImageView) view).setImageDrawable(placeHolderDrawable);
+                                }
+
+                        }
+
+                        MyTarget target = new MyTarget();
+                        target.setView(convertView);
+
+                        Picasso.with(getBaseContext()).load(data.toString()).into(target);
+*/
+
                     } else ((ImageView) convertView).setImageResource(R.drawable.map_dummy);
                     return true;
                 case R.id.textViewDateDivider:
