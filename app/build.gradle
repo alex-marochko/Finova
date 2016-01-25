@@ -28,6 +28,11 @@ dependencies {
     compile files('libs/picasso-2.5.2.jar')
     compile files('libs/glide-3.6.1.jar')
 
+    //ListViewAnimations
+//    compile 'com.nhaarman.listviewanimations:lib-core:3.1.0@aar'
+//    compile 'com.nhaarman.listviewanimations:lib-manipulation:3.1.0@aar'
+//    compile 'com.nhaarman.listviewanimations:lib-core-slh:3.1.0@aar'
+
     //SwipyRefreshLayout
     compile 'com.github.orangegangsters:swipy:1.2.2@aar'
 }

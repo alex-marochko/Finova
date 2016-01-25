@@ -16,6 +16,8 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -25,12 +27,11 @@ import android.widget.TextView;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonParser;
+
 import com.orangegangsters.github.swipyrefreshlayout.library.SwipyRefreshLayout;
 import com.orangegangsters.github.swipyrefreshlayout.library.SwipyRefreshLayoutDirection;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
-
-import android.support.library21.custom.SwipeRefreshLayoutBottom;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -50,7 +51,7 @@ public class TracksActivity extends AppCompatActivity {
     static final String ACCESS_TOKEN = "63Rqp1-c72sYPuLao3BYpLRv-358SHer";
     static final String SERVER_URI = "http://api.connect.finova.ua/app/";
     static final int TRACKS_PER_PAGE_SERVER = 2;
-    static final int TRACKS_PER_REQUEST_CLIENT = 5;
+    static final int TRACKS_PER_REQUEST_CLIENT = 4;
 
     static final int REQUEST_PARAM_TRACKS = 1;
 
@@ -85,7 +86,16 @@ public class TracksActivity extends AppCompatActivity {
 
                     loadTracksData(DATA_REFRESH);
 
-                } else swipyRefreshLayout.setRefreshing(false);
+                } else{
+                    swipyRefreshLayout.setRefreshing(false);
+
+/*
+                    //Animation
+                    Animation anim = AnimationUtils.loadAnimation(TracksActivity.this, R.anim.track_list_item_alpha);
+                    listViewTracks.startAnimation(anim);
+*/
+
+                }
             }
         });
 
@@ -247,13 +257,12 @@ public class TracksActivity extends AppCompatActivity {
                 from, to);
 */
 
-        SimpleAdapter simpleAdapter = new SimpleAdapter(this, listData, R.layout.track_list_item,
+        AnimSimpleAdapter simpleAdapter = new AnimSimpleAdapter(this, listData, R.layout.track_list_item,
                 from, to);
 
         simpleAdapter.setViewBinder(new FinovaViewBinder());
 
         listViewTracks.setAdapter(simpleAdapter);
-
 
 
         findViewById(R.id.loadingPanel).setVisibility(View.GONE);
@@ -331,10 +340,42 @@ public class TracksActivity extends AppCompatActivity {
     public void onDummyButtonClick(View v){
 
         Toast.makeText(getBaseContext(), "Coming soon!", Toast.LENGTH_SHORT).show();
-        swipyRefreshLayout.setRefreshing(true);
 
     }
 
+
+    private class AnimSimpleAdapter extends SimpleAdapter{
+
+
+        /**
+         * Constructor
+         *
+         * @param context  The context where the View associated with this SimpleAdapter is running
+         * @param data     A List of Maps. Each entry in the List corresponds to one row in the list. The
+         *                 Maps contain the data for each row, and should include all the entries specified in
+         *                 "from"
+         * @param resource Resource identifier of a view layout that defines the views for this list
+         *                 item. The layout file should include at least those named views defined in "to"
+         * @param from     A list of column names that will be added to the Map associated with each
+         *                 item.
+         * @param to       The views that should display column in the "from" parameter. These should all be
+         *                 TextViews. The first N views in this list are given the values of the first N columns
+         */
+        public AnimSimpleAdapter(Context context, List<? extends Map<String, ?>> data, int resource, String[] from, int[] to) {
+            super(context, data, resource, from, to);
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            View v = super.getView(position, convertView, parent);
+
+            //Animation
+            Animation anim = AnimationUtils.loadAnimation(TracksActivity.this, R.anim.track_list_item_alpha);
+            v.startAnimation(anim);
+
+            return v;
+        }
+    }
 
     private class FinovaSimpleAdapter extends SimpleAdapter{
         private Context context;
