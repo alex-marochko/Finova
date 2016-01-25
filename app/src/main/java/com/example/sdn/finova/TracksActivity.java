@@ -1,5 +1,6 @@
 package com.example.sdn.finova;
 
+import android.app.ActionBar;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
@@ -16,6 +17,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
@@ -72,6 +74,9 @@ public class TracksActivity extends AppCompatActivity {
             R.id.textViewTo, R.id.imageViewMap, R.id.textViewDateDivider};
     AnimSimpleAdapter simpleAdapter;
 
+    int animateFromPosition;
+    Animation anim;
+
 
     ListView listViewTracks;
     SwipyRefreshLayout swipyRefreshLayout;
@@ -79,12 +84,17 @@ public class TracksActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
         setContentView(R.layout.activity_tracks);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+
         listViewTracks = (ListView)findViewById(R.id.listViewTracks);
         swipyRefreshLayout = (SwipyRefreshLayout)findViewById(R.id.swipyRefreshLayout);
+
+        anim = AnimationUtils.loadAnimation(TracksActivity.this, R.anim.track_list_item_alpha);
 
 
         loadTracksData(DATA_REFRESH);
@@ -269,6 +279,7 @@ public class TracksActivity extends AppCompatActivity {
 */
 
         if(gettingDataMode == DATA_REFRESH){
+            animateFromPosition = 0;
         simpleAdapter = new AnimSimpleAdapter(this, listData, R.layout.track_list_item,
                 from, to);
 
@@ -277,7 +288,10 @@ public class TracksActivity extends AppCompatActivity {
         listViewTracks.setAdapter(simpleAdapter);
         } else {
 
+            animateFromPosition = tracks.size() - TRACKS_PER_REQUEST_CLIENT;
             simpleAdapter.notifyDataSetChanged();
+            listViewTracks.smoothScrollToPosition(animateFromPosition);
+
         }
 
 
@@ -384,9 +398,14 @@ public class TracksActivity extends AppCompatActivity {
         public View getView(int position, View convertView, ViewGroup parent) {
             View v = super.getView(position, convertView, parent);
 
-            //Animation
-            Animation anim = AnimationUtils.loadAnimation(TracksActivity.this, R.anim.track_list_item_alpha);
-            v.startAnimation(anim);
+            //List items animation
+
+            if(position>=animateFromPosition) {
+                v.startAnimation(anim);
+                animateFromPosition = position + 1;
+            }
+
+//            So, every new added list item will be animated once.
 
             return v;
         }

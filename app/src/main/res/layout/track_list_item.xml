@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:layout_margin="20dp"
+    android:layout_marginRight="20dp"
+    android:layout_marginEnd="20dp"
+    android:layout_marginLeft="20dp"
+    android:layout_marginStart="20dp"
+    android:paddingBottom="20dp"
+    android:background="@drawable/panel"
+    >
 
     <TextView
         android:layout_width="match_parent"
@@ -27,8 +35,9 @@
         android:layout_marginTop="20dp"
         android:scaleType="centerCrop"
 
-
         android:adjustViewBounds="true"
+
+        android:background="@drawable/panel"
 
         android:contentDescription="карта маршрута"
          />
@@ -44,7 +53,7 @@
         android:layout_marginRight="10dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="10dp"
-        android:background="@null"
+        android:background="@drawable/circle_shadow"
         android:onClick="onDummyButtonClick"
         />
 
@@ -62,14 +71,15 @@
     <ImageView
         android:src="@drawable/map_pin1_2"
         android:layout_width="wrap_content"
-        android:layout_height="30dp"
+        android:layout_height="24dp"
         android:id="@+id/imageViewMapPin1"
         android:layout_toEndOf="@id/textViewTimeFrom"
         android:layout_toRightOf="@id/textViewTimeFrom"
         android:layout_below="@id/imageViewMap"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="6dp"
-        android:layout_marginStart="10dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="10dp"
+
         />
 
     <TextView
@@ -79,14 +89,16 @@
         android:layout_toEndOf="@id/textViewTimeFrom"
         android:layout_toRightOf="@id/textViewTimeFrom"
         android:layout_below="@id/imageViewMap"
-        android:layout_marginLeft="80dp"
-        android:layout_marginStart="80dp"
+        android:layout_marginLeft="74dp"
+        android:layout_marginStart="74dp"
         android:layout_marginTop="10dp"
         android:layout_alignLeft="@id/textViewTimeFrom"
         android:layout_alignStart="@id/textViewTimeFrom"
         android:text="Обухов,\nКиевская область"
         android:textSize="14sp"
         android:singleLine="false"
+        android:maxLines="3"
+        android:maxWidth="130dp"
 
         />
 
@@ -130,15 +142,17 @@
 
     <ImageView
         android:layout_width="wrap_content"
-        android:layout_height="30dp"
+        android:layout_height="22dp"
         android:id="@+id/imageViewMapPin2"
         android:src="@drawable/map_pin2"
         android:layout_toEndOf="@id/textViewTimeTo"
         android:layout_toRightOf="@id/textViewTimeTo"
         android:layout_below="@id/imageViewMap"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="66dp"
-        android:layout_marginStart="10dp"
+
+        android:layout_marginTop="68dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginStart="4dp"
+
         />
 
 
@@ -149,13 +163,13 @@
         android:layout_toEndOf="@id/textViewTimeFrom"
         android:layout_toRightOf="@id/textViewTimeFrom"
         android:layout_below="@id/imageViewMap"
-        android:layout_marginLeft="80dp"
-        android:layout_marginStart="80dp"
+        android:layout_marginLeft="74dp"
+        android:layout_marginStart="74dp"
         android:layout_marginTop="70dp"
         android:layout_alignLeft="@id/textViewTimeFrom"
         android:layout_alignStart="@id/textViewTimeFrom"
         android:text="Обухов,Киевская область"
-        android:textSize="16sp"
+        android:textSize="14sp"
         android:singleLine="false"
 
         />
