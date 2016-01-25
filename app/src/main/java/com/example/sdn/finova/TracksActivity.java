@@ -60,7 +60,18 @@ public class TracksActivity extends AppCompatActivity {
 
     private int requestId = 1;
 
+//    Necessary data for tracks ListView:
     private ArrayList<TrackJSON> tracks = new ArrayList<>();
+    ArrayList<Map<String, Object>> listData = new ArrayList<Map<String, Object>>(
+            tracks.size());
+    String[] from = {R.id.textViewDistance + "", R.id.textViewDuration +"",
+            R.id.textViewFrom + "", R.id.textViewTimeFrom + "", R.id.textViewTimeTo + "",
+            R.id.textViewTo + "", R.id.imageViewMap + "", R.id.textViewDateDivider + ""};
+    int[] to = {R.id.textViewDistance, R.id.textViewDuration,
+            R.id.textViewFrom, R.id.textViewTimeFrom, R.id.textViewTimeTo,
+            R.id.textViewTo, R.id.imageViewMap, R.id.textViewDateDivider};
+    AnimSimpleAdapter simpleAdapter;
+
 
     ListView listViewTracks;
     SwipyRefreshLayout swipyRefreshLayout;
@@ -82,12 +93,12 @@ public class TracksActivity extends AppCompatActivity {
             @Override
             public void onRefresh(SwipyRefreshLayoutDirection direction) {
 
-                if(direction == SwipyRefreshLayoutDirection.TOP){
+                if (direction == SwipyRefreshLayoutDirection.TOP) {
 
                     loadTracksData(DATA_REFRESH);
 
-                } else{
-                    swipyRefreshLayout.setRefreshing(false);
+                } else {
+                    loadTracksData(DATA_ADD);
 
 /*
                     //Animation
@@ -181,7 +192,7 @@ public class TracksActivity extends AppCompatActivity {
                 for(int i=0; i<tracksCount; i++ )
                     tracks.add( gson.fromJson(array.get(i), TrackJSON.class) );
 
-                fillViews();
+                fillViews(gettingDataMode);
                 swipyRefreshLayout.setRefreshing(false);
                 swipyRefreshLayout.setEnabled(true);
 //
@@ -194,7 +205,7 @@ public class TracksActivity extends AppCompatActivity {
 
     }
 
-    public void fillViews(){
+    public void fillViews(int gettingDataMode){
 /*
         Log.d(LOG_TAG, "size = " + tracks.size());
         for (int i = 0; i < tracks.size(); i++) {
@@ -202,14 +213,21 @@ public class TracksActivity extends AppCompatActivity {
         }
 */
 
+/*
         ArrayList<Map<String, Object>> listData = new ArrayList<Map<String, Object>>(
                 tracks.size());
 
         Map<String, Object> m;
+*/
+
+        if(gettingDataMode == DATA_REFRESH) listData.clear();
+
+        Map<String, Object> m;
+
         Calendar calendar = Calendar.getInstance();
         Calendar calendar2 = Calendar.getInstance();
 
-        for (int i = 0; i < tracks.size(); i++) {
+        for (int i = tracks.size()-TRACKS_PER_REQUEST_CLIENT; i < tracks.size(); i++) { //to add only new data portion
             m = new HashMap<String, Object>();
             m.put(R.id.textViewDistance + "", tracks.get(i).getLength() + ".0 км");
 
@@ -217,8 +235,8 @@ public class TracksActivity extends AppCompatActivity {
             if(tracks.get(i).getTime_track()>=3600) s = getTimeFormatted(tracks.get(i).getTime_track(), "H ч ");
             m.put(R.id.textViewDuration +"", s + getTimeFormatted(tracks.get(i).getTime_track(), "m мин"));
             m.put(R.id.textViewFrom + "", tracks.get(i).getAddressStart());
-            m.put(R.id.textViewTimeFrom + "", getTimeFormatted(tracks.get(i).getTime_track_start(), "hh:mm"));
-            m.put(R.id.textViewTimeTo + "", getTimeFormatted(tracks.get(i).getTime_track_stop(), "hh:mm"));
+            m.put(R.id.textViewTimeFrom + "", getTimeFormatted(tracks.get(i).getTime_track_start(), "HH:mm"));
+            m.put(R.id.textViewTimeTo + "", getTimeFormatted(tracks.get(i).getTime_track_stop(), "HH:mm"));
             m.put(R.id.textViewTo + "", tracks.get(i).getAddressEnd());
             m.put(R.id.imageViewMap + "", tracks.get(i).getImg());
 //            m.put(R.id.textViewDateDivider + "", tracks.get(i).getTime_track_start());
@@ -241,28 +259,26 @@ public class TracksActivity extends AppCompatActivity {
             Log.d(LOG_TAG, "textViewDateDivider " +  m.get(R.id.textViewDateDivider + ""));
 
 
-                    listData.add(m);
+            listData.add(m);
         }
 
-        String[] from = {R.id.textViewDistance + "", R.id.textViewDuration +"",
-                R.id.textViewFrom + "", R.id.textViewTimeFrom + "", R.id.textViewTimeTo + "",
-                R.id.textViewTo + "", R.id.imageViewMap + "", R.id.textViewDateDivider + ""};
-
-        int[] to = {R.id.textViewDistance, R.id.textViewDuration,
-                R.id.textViewFrom, R.id.textViewTimeFrom, R.id.textViewTimeTo,
-                R.id.textViewTo, R.id.imageViewMap, R.id.textViewDateDivider};
 
 /*
         FinovaSimpleAdapter simpleAdapter = new FinovaSimpleAdapter(this, listData, R.layout.track_list_item,
                 from, to);
 */
 
-        AnimSimpleAdapter simpleAdapter = new AnimSimpleAdapter(this, listData, R.layout.track_list_item,
+        if(gettingDataMode == DATA_REFRESH){
+        simpleAdapter = new AnimSimpleAdapter(this, listData, R.layout.track_list_item,
                 from, to);
 
         simpleAdapter.setViewBinder(new FinovaViewBinder());
 
         listViewTracks.setAdapter(simpleAdapter);
+        } else {
+
+            simpleAdapter.notifyDataSetChanged();
+        }
 
 
         findViewById(R.id.loadingPanel).setVisibility(View.GONE);
@@ -294,6 +310,8 @@ public class TracksActivity extends AppCompatActivity {
 
     public String getDateFormatted(Calendar calendar){
 
+        TimeZone.setDefault(TimeZone.getTimeZone("GMT"));
+
         Date date = calendar.getTime();  //calendar.getTime();
 
         SimpleDateFormat formatter = new SimpleDateFormat("dd MMMM", Locale.getDefault());
@@ -318,9 +336,6 @@ public class TracksActivity extends AppCompatActivity {
 //        currentDate.add(Calendar.MILLISECOND, -calendar.get(Calendar.MILLISECOND));
 
         Log.d(LOG_TAG, "date.toString(): " + currentDate.getTime().toString() );
-
-
-
 
         if(checkCalendar.get(Calendar.YEAR)==1970){
             switch (currentDate.get(Calendar.DAY_OF_YEAR)-calendar.get(Calendar.DAY_OF_YEAR)){
@@ -528,6 +543,7 @@ public class TracksActivity extends AppCompatActivity {
 */
                         Picasso.with(getBaseContext())
                                 .load(data.toString())
+                                .noFade()
 
 //                                .resize(1000, 800)
 
