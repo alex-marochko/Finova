@@ -40,9 +40,9 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:scrollingCache="false"
+        android:scrollingCache="true"
         android:divider="@null"
-        android:dividerHeight="5dp"
+        android:dividerHeight="0dp"
 
         />
 

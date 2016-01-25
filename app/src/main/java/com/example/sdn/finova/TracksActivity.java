@@ -1,10 +1,14 @@
 package com.example.sdn.finova;
 
 import android.app.ActionBar;
+import android.app.Activity;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.AssetManager;
 import android.graphics.Bitmap;
+import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -36,6 +40,7 @@ import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -77,6 +82,10 @@ public class TracksActivity extends AppCompatActivity {
     int animateFromPosition;
     Animation anim;
 
+    private SharedPreferences.Editor preferencesEditor;
+    private SharedPreferences preferences;
+
+
 
     ListView listViewTracks;
     SwipyRefreshLayout swipyRefreshLayout;
@@ -89,6 +98,14 @@ public class TracksActivity extends AppCompatActivity {
         setContentView(R.layout.activity_tracks);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+//      loading fonts
+/*
+        final String fontPathRegular = "/Fonts/Regular.otf";
+        final String fontPathMedium = "/Fonts/Medium.otf";
+        Typeface typeFaceRegular = Typeface.createFromAsset(getAssets(), fontPathRegular);
+        Typeface typeFaceMedium = Typeface.createFromAsset(getAssets(), fontPathMedium);
+*/
 
 
         listViewTracks = (ListView)findViewById(R.id.listViewTracks);
@@ -620,6 +637,7 @@ public class TracksActivity extends AppCompatActivity {
                     if(data.toString().equals(""))
                         ((TextView)convertView).setVisibility(View.GONE);
                     else ((TextView)convertView).setVisibility(View.VISIBLE);
+//                    ((TextView)convertView).setTypeface(typeFaceRegular);
                     return true;
 
             }
@@ -629,6 +647,7 @@ public class TracksActivity extends AppCompatActivity {
         }
 
     }
+
 
 
 }
